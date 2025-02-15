@@ -1,0 +1,352 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import Landing from "@components/Landing.astro";
+import FAQ from "@components/FAQ.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="About"
+  description="Page should contain mission, vision, values and locations"
+  preloadedImage={optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <Landing title="About Us" image={optimizedImage} />
+
+ <!-- ============================================ -->
+<!--                   Steps                      -->
+<!-- ============================================ -->
+
+<section id="steps-1209">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text"> Since its beginning in 2001, Kids Hurt Too Hawai'i has provided group
+          support and training services to thousands of children, youth,
+          caregivers, and providers.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <h3 class="cs-h3">MISSION</h3>
+                <p class="cs-item-text">
+                    To strengthen connections to the community by bringing together children, teens, and their parents impacted by grief and trauma in safe and healing ways.
+                </p>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">VISION</h3>
+                <p class="cs-item-text">
+                    To restore healthy growth and development in children with grief and trauma, and stabilize families in crisis.
+                </p>
+            </li>
+             <li class="cs-item">
+                <h3 class="cs-h3">VALUES</h3>
+                <p class="cs-item-text">
+                    EXCELLENCE: Delivering what we promise and exceeding expectations.<br />
+                    BE REAL: Honesty and integrity always.<br />
+                    PASSION: Inspired to care about the individual, organization, and community.<br />
+                    COLLABORATION: Value everyone and work together for the common good.<br />
+                    DETERMINATION: Committed to giving our best in everything we do.<br />
+                    RESPECT: We follow the Golden Rule in everything we do: "Do unto others..."
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+ 
+  <!-- ============================================ -->
+<!--                  Locations                   -->
+<!-- ============================================ -->
+
+<section id="locations-1845">
+    <div class="cs-container">
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <h3 class="cs-h3">
+                    Honolulu
+                </h3>
+                <p class="cs-item-text">
+                    245 North Kukui Street, Stuie 102, Honolulu, HI 96817
+                </p>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">
+                    Maui
+                </h3>
+                <p class="cs-item-text">
+                    Maui Address, Wailuku, HI 96732
+                </p>
+            </li>
+        </ul>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="/assets/images/img-placeholder.png">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="/assets/images/img-placeholder.png">
+        <img loading="lazy" decoding="async" src="/assets/images/img-placeholder.png" alt="lobby" width="1400" height="730">
+    </picture>
+</section>
+  <CTA />
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+
+ /*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-1209 {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+
+        .cs-container {
+            /* changes to 1280px at tablet */
+            max-width: (704/16rem);
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-text {
+            font-size: 1.5rem;
+            line-height: 1.5em;
+            text-align: inherit;
+            max-width: (650/16rem);
+            width: 100%;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+
+       .cs-card-group {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+}
+
+.cs-item {
+    text-align: center;
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F8C27B;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+        .cs-number {
+            font-size: (20/16rem);
+            font-weight: bold;
+            width: (88/16rem);
+            height: (88/16rem);
+            /* 16px - 32px */
+            margin-bottom: clamp(1rem, 4vw, 2rem);
+            color: var(--primary);
+            background-color: var(--primaryLight);
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-icon {
+            width: (40/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            max-width: (413/16rem);
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-1209 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 4;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---         Locations          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #locations-1845 {
+        padding: var(--sectionPadding);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .cs-container {
+            max-width: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .cs-item {
+            text-align: center;
+            list-style: none;
+            width: 100%;
+            max-width: (462/16rem);
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            /* 32px - 40px top & bottom */
+            padding: clamp(2rem, 4vw, 2.5rem) (32/16rem);
+            background-color: var(--primary);
+            border-radius: (260/16rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            grid-column: span 12;
+            gap: (12/16rem);
+            transition: background-color .3s;
+
+            &:hover {
+                background-color: #f8c27b;
+                cursor: pointer;
+
+                .cs-h3 {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-item-text {
+                    color: var(--bodyTextColorWhite);
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            margin: 0;
+            color: #fff;
+        }
+
+        .cs-item-text {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.6vw, 1rem);
+            line-height: 1.5em;
+            margin: 0;
+            color: #fff;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+                object-position: top;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #000000;
+                pointer-events: none;
+                opacity: 0.20;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #locations-1845 {
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+
+</style>
