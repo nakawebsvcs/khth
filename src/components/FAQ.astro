@@ -1,8 +1,8 @@
 <section id="faq-1741">
   <div class="cs-container">
     <div class="cs-content">
-      <span class="cs-topper">Free Download >></span>
-      <h2 class="cs-title">10 Ways to Support a Grieving Child</h2>
+      <a href="/10-Ways-t-o-Support-Greiving-Children.pdf" target="_blank" style="text-decoration: none;"><span class="cs-topper">Free Download >></span>
+      <h2 class="cs-title">10 Ways to Support a Grieving Child</h2></a>
     </div>
     <div class="cs-flex-group">
      <a href="/10-Ways-t-o-Support-Greiving-Children.pdf" target="_blank"><img src="/assets/images/TIPS.png" style="width: 75%"></a>
@@ -14,26 +14,13 @@
 <!-- The processed script will be injected into your page’s <head> with type="module" -->
 <!-- As a consequence, there is no need to use the defer attribute when loading a module script because modules are deferred automatically. -->
 
-<script>
-  // Astro:page-load wrapper for View Transitions purposes
-  document.addEventListener("astro:page-load", () => {
-    // Makes the script available after navigating to a new page.
-    const faqItems = Array.from(document.querySelectorAll(".cs-faq-item"));
-    for (const item of faqItems) {
-      const onClick = () => {
-        item.classList.toggle("active");
-      };
-      item.addEventListener("click", onClick);
-    }
-  });
-</script>
-
 <style lang="less">
   /* Mobile - 360px */
   @media only screen and (min-width: 0rem) {
     #faq-1741 {
       padding: var(--sectionPadding);
       position: relative;
+      background-color: #fafbfc;
 
       .cs-container {
         width: 100%;
@@ -57,111 +44,43 @@
         align-items: center;
       }
 
+      .cs-content {
+  a {
+    .cs-topper,
+    .cs-title {
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s ease;
+      }
+      
+      &:hover:after {
+        width: 100%;
+      }
+    }
+  }
+}
       .cs-title {
         max-width: 15ch;
         margin: 0 0 (32/16rem);
       }
 
-      .cs-faq-group {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: (12/16rem);
-      }
-
-      .cs-faq-item {
-        list-style: none;
-        width: 100%;
-        /* clips all corners of the button that overlap the rounded border */
-        overflow: hidden;
-        transition: border-bottom 0.3s;
-
-        &.active {
-          .cs-button {
-            background-color: var(--secondary);
-            color: var(--bodyTextColorWhite);
-
-            &:before {
-              background-color: var(--bodyTextColorWhite);
-              transform: rotate(315deg);
-            }
-
-            &:after {
-              background-color: var(--bodyTextColorWhite);
-              transform: rotate(-315deg);
-            }
-          }
-
-          .cs-item-text {
-            height: auto;
-            /* 16px - 24px */
-            padding: (16/16rem) clamp(1rem, 2vw, 1.5rem);
-            opacity: 1;
-            border: 1px solid #e8e8e8;
-          }
-        }
-      }
-
-      .cs-button {
-        /* 16px - 20px */
-        font-size: clamp(1rem, 2.5vw, 1.25rem);
-        font-weight: bold;
-        line-height: 1.2em;
-        text-align: left;
-        width: 100%;
-        padding: (16/16rem);
-        padding-left: (52/16rem);
-        background-color: transparent;
-        color: var(--headerColor);
-        border: 1px solid #e8e8e8;
-        display: block;
-        position: relative;
-        transition:
-          background-color 0.3s,
-          color 0.3s;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-        &:before {
-          /* left line */
-          content: "";
-          width: (8/16rem);
-          height: (2/16rem);
-          background-color: var(--headerColor);
-          opacity: 1;
-          display: block;
-          position: absolute;
-          top: 45%;
-          left: (18/16rem);
-          transform: rotate(45deg);
-          transition: transform 0.5s;
-          /* animate the transform from the left side of the x axis, and the center of the y */
-          transform-origin: left center;
-        }
-
-        &:after {
-          /* right line */
-          content: "";
-          width: (8/16rem);
-          height: (2/16rem);
-          background-color: var(--headerColor);
-          opacity: 1;
-          display: block;
-          position: absolute;
-          top: 45%;
-          left: (21/16rem);
-          transform: rotate(-45deg);
-          transition: transform 0.5s;
-          /* animate the transform from the right side of the x axis, and the center of the y */
-          transform-origin: right center;
-        }
-      }
+     .cs-flex-group {
+  img {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+     }
 
       .cs-item-text {
         /* 14px - 16px */
@@ -209,52 +128,6 @@
         align-items: flex-start;
         /* prevents flexbox from squishing it */
         flex: none;
-      }
-    }
-  }
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0rem) {
-    body.dark-mode {
-      #faq-1741 {
-        .cs-title,
-        .cs-item-text {
-          color: var(--bodyTextColorWhite);
-        }
-
-        .cs-topper {
-          color: var(--primaryLight);
-        }
-
-        .cs-faq-item {
-          &.active {
-            .cs-button {
-              background-color: var(--secondary);
-              color: var(--bodyTextColorWhite);
-
-              &:before,
-              &:after {
-                background-color: var(--bodyTextColorWhite);
-              }
-            }
-
-            .cs-item-text {
-              /* 20px - 24px */
-              padding-top: clamp(1.25rem, 1.3vw, 1.5rem);
-              border-color: var(--accent);
-            }
-          }
-        }
-
-        .cs-button {
-          color: var(--bodyTextColorWhite);
-          border-color: var(--accent);
-
-          &:before,
-          &:after {
-            background-color: var(--bodyTextColorWhite);
-          }
-        }
       }
     }
   }

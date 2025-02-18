@@ -12,7 +12,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
 <BaseLayout
   title="About"
-  description="Page should contain mission, vision, values and locations"
+  description="Meta description here"
   preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
@@ -64,24 +64,26 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!-- ============================================ -->
 <!--                  Locations                   -->
 <!-- ============================================ -->
-
+<h1 class="cs-h1" style="margin-bottom: 3rem; text-align: center;">Locations</h1>
 <section id="locations-1845">
     <div class="cs-container">
         <ul class="cs-card-group">
             <li class="cs-item">
+               <span style="font-size: 2rem; color: white;">⟟</span>
                 <h3 class="cs-h3">
                     Honolulu
                 </h3>
                 <p class="cs-item-text">
-                    245 North Kukui Street, Stuie 102, Honolulu, HI 96817
+                    245 North Kukui Street, Suite 102<br /> Honolulu, HI 96817
                 </p>
             </li>
             <li class="cs-item">
+                <span style="font-size: 2rem; color: white;">⟟</span>
                 <h3 class="cs-h3">
                     Maui
                 </h3>
                 <p class="cs-item-text">
-                    Maui Address, Wailuku, HI 96732
+                    Maui Address<br /> Wailuku, HI 96732
                 </p>
             </li>
         </ul>
@@ -151,7 +153,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 .cs-item {
@@ -165,28 +167,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-        .cs-number {
-            font-size: (20/16rem);
-            font-weight: bold;
-            width: (88/16rem);
-            height: (88/16rem);
-            /* 16px - 32px */
-            margin-bottom: clamp(1rem, 4vw, 2rem);
-            color: var(--primary);
-            background-color: var(--primaryLight);
-            border: 1px solid var(--primary);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-icon {
-            width: (40/16rem);
-            height: auto;
-            display: block;
-        }
-
         .cs-h3 {
             font-size: (20/16rem);
             line-height: 1.2em;
@@ -220,6 +200,9 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 display: block;
             }
         }
+        .cs-item:nth-child(3) .cs-item-text {
+    max-width: 800px;
+}
     }
 }
 
@@ -250,7 +233,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             /* 16px - 20px */
-            gap: clamp(1rem, 2vw, 1.25rem);
+            gap: clamp(4rem, 6vw, 4rem);
+            place-items: center;
         }
 
         .cs-item {
@@ -261,15 +245,15 @@ const optimizedImage = await getOptimizedImage(landingImage)
             /* prevents padding from affecting height and width */
             box-sizing: border-box;
             /* 32px - 40px top & bottom */
-            padding: clamp(2rem, 4vw, 2.5rem) (32/16rem);
+            padding: clamp(4rem, 6vw, 4.5rem) (32/16rem);
             background-color: var(--primary);
-            border-radius: (260/16rem);
+            border-radius: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             grid-column: span 12;
-            gap: (12/16rem);
+            gap: (18/16rem);
             transition: background-color .3s;
 
             &:hover {

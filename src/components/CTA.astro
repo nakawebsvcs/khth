@@ -82,7 +82,7 @@ import CSPicture from "@components/TemplateComponents/CSPicture.astro";
         content: "";
         width: (2000/16rem);
         height: (1108/16rem);
-        background: url("/assets/svgs/cta-squares.svg");
+        background: #fff;
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -97,17 +97,6 @@ import CSPicture from "@components/TemplateComponents/CSPicture.astro";
       .container {
         width: 90.0625%;
         margin: auto;
-      }
-    }
-  }
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #cta {
-        &:after {
-          display: none;
-        }
       }
     }
   }

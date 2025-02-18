@@ -10,19 +10,19 @@
     "children": [
       {
         "key": "Our Team",
-        "url": "/projects/our-team/"
+        "url": "/about/our-team/"
       },
       {
         "key": "Our Approach",
-        "url": "/projects/our-approach"
+        "url": "/about/our-approach"
       },
       {
         "key": "Our Stories",
-        "url": "/projects/our-stories/"
+        "url": "/about/our-stories/"
       },
       {
         "key": "Our Donors and Partners",
-        "url": "/projects/donors-partners/"
+        "url": "/about/donors-partners/"
       }
     ]
   },
@@ -60,7 +60,12 @@
       {
         "key": "Volunteer",
         "url": "/volunteer/"
-      }
+      },
+      {
+      "key": "Join our Mailing List",
+      "url": "https://kidshurttoo.dm.networkforgood.com/forms/join-our-mailing-list",
+      "target": "_blank"
+    }
     ]
   },
   {

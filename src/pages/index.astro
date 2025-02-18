@@ -237,7 +237,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <p class="cs-text">
           To learn more and stay in touch with KHTH activities,
           <a
-            href="https://kidshurttoo.dm.networkforgood.com/forms/join-our-mailing-list"
+            href="https://kidshurttoo.dm.networkforgood.com/forms/join-our-mailing-list" target="_blank"
             >click here</a
           >
           to join our mailing list.
@@ -265,75 +265,40 @@ const optimizedImage = await getOptimizedImage(landingImage)
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!--            Extra Content To Rank             -->
-  <!-- ============================================ -->
+ <!-- ============================================ -->
+    <!--                 Why Choose                   -->
+    <!-- ============================================ -->
 
-  <section id="sbs-r">
-    <div class="cs-container">
-      <!-- Left Image Section -->
-      <div class="cs-left">
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/construction-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/construction.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/construction.jpg"
-            alt="house"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/cabinets2-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/cabinets2.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/cabinets2.jpg"
-            alt="cabinets"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-      </div>
-      <!-- Right Content Section-->
-      <div class="cs-right">
-        <span class="cs-topper">SEO Ranking</span>
-        <h2 class="cs-title">Talk about a main service keyword</h2>
-        <p class="cs-text">
-          In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-          officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-          et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-          nonatourean olei aptent taciti sociosqu ad litora torquent per.
-        </p>
-        <p class="cs-text">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tenetur,
-          iure nihil ipsam qui atque commodi id voluptatem nesciunt, quis animi
-          fuga cum doloribus! Eaque laboriosam, unde consectetur iure asperiores
-          ullam. Consequuntur debitis a voluptatibus vitae optio autem explicabo
-          quia neque est quas, in placeat. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Doloribus modi laudantium voluptatibus
-          rem libero error minus quia eligendi sapiente eos.
-        </p>
-      </div>
-    </div>
-  </section>
+    <section id="why-choose-441">
+        <div class="cs-container">
+            <p class="cs-text">
+                Kids Hurt Too Hawai'i has provided grief and trauma support for thousands of children in Hawai'i, trained more than 5,000 adults, and conducted 50 crisis interventions. 
+            </p>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                  <div style="text-align: center">
+                        <span class="cs-number"><span style="color: red">1</span> in 14</span></div>
+                        <p class="cs-item-p">
+                            U.S. children experience a death of a parent or sibling by age 18.</p>
+                            <p class="cs-item-p">
+                            By age 25, this number increases from 5.2 million to 13.2 million.
+                        </p>
+                    </a>
+                </li>
+                <li class="cs-item">
+                   <div style="text-align: center">
+                        <span class="cs-number"><span style="color: red">1</span> in 17</span></div>
+                        <p class="cs-item-p">
+                            Hawai'i children experience a death of a parent or sibling by age 18.</p>
+                            <p class="cs-item-p">
+                            By age 25, this number increases from 18 thousand to 48 thousand.
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+  
 
   <!-- ============================================ -->
   <!--                   Gallery                    -->
@@ -341,7 +306,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
   <section id="gallery">
     <div class="cs-container">
-      <span class="cs-topper">Instagram Feed</span>
+      <span class="cs-topper">Instagram Feeds</span>
     </div>
   </section>
 
@@ -643,7 +608,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       width: 100%;
       max-width: (1280/16rem);
       margin: auto;
-      margin-top: 3rem;
+      margin-top: 5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -657,6 +622,11 @@ const optimizedImage = await getOptimizedImage(landingImage)
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        margin-top: 2rem;
+      }
+
+      .cs-button-solid {
+        margin-bottom: 1.5rem;
       }
 
       .cs-flex-wrapper {
@@ -758,7 +728,130 @@ const optimizedImage = await getOptimizedImage(landingImage)
       }
     }
   }
+/*-- -------------------------- -->
+<---         Why Choose         -->
+<--- -------------------------- -*/
 
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #why-choose-441 {
+        padding: var(--sectionPadding);
+        background-color: #fafbfc;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16em);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-text {
+          font-size: 2rem;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            /* 12px - 20px */
+            gap: clamp(0.75rem, 1.5vw, 1.25rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            /* changes on tablet */
+            max-width: (462/16rem);
+            /* 24px - 40px top & bottom */
+            /* 24px - 40px left & right */
+            padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            border-radius: (16/16rem);
+            background-color: #fff;
+            border: 1px solid #dad9e3;
+            box-shadow: 0px 24px 54px rgba(87, 107, 147, 0.12);
+            position: relative;
+        }
+
+        .cs-item-p {
+          margin: 1rem;
+        }
+
+        .cs-link {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cs-icon {
+            /* 24px - 32px */
+            height: clamp(1.5rem, 2vw, 2rem);
+            width: auto;
+        }
+
+        .cs-number {
+            font-size: var(--headerFontSize);
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.2em;
+            margin: 0;
+            margin-bottom: (4/16rem);
+            color: var(--headerColor);
+            transition: color 0.3s;
+        }
+
+        .cs-desc {
+            /* 14px - 20px */
+            font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+            text-align: center;
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+            transition: color 0.3s;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #why-choose-441 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-card-group {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .cs-item {
+            width: 100%;
+        }
+    }
+}
   /*-- -------------------------- -->
     <---          Services          -->
     <--- -------------------------- -*/
@@ -1009,50 +1102,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
     }
   }
 
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #sbs {
-        .cs-left {
-          &:before,
-          &:after {
-            background: var(--accent);
-          }
-        }
-
-        .cs-picture2 {
-          background-color: var(--dark);
-          /* 6px - 12px */
-          border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-        }
-
-        .cs-topper {
-          color: var(--primaryLight);
-        }
-
-        .cs-title,
-        .cs-text,
-        .cs-h3,
-        .cs-flex-p,
-        .cs-name {
-          color: var(--bodyTextColorWhite);
-        }
-
-        .cs-flex-group {
-          background-color: var(--accent);
-        }
-
-        .cs-job {
-          color: var(--bodyTextColorWhite);
-          opacity: 0.8;
-        }
-
-        .cs-quote-icon {
-          opacity: 0.2;
-        }
-      }
-    }
-  }
 
   /*-- -------------------------- -->
     <---       Side By Side         -->
@@ -1209,51 +1258,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
     }
   }
 
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #sbs-r {
-        .cs-left {
-          &:before,
-          &:after {
-            background: var(--accent);
-          }
-        }
-
-        .cs-picture2 {
-          background-color: var(--dark);
-          /* 6px - 12px */
-          border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-        }
-
-        .cs-topper {
-          color: var(--primaryLight);
-        }
-
-        .cs-title,
-        .cs-text,
-        .cs-h3,
-        .cs-flex-p,
-        .cs-name {
-          color: var(--bodyTextColorWhite);
-        }
-
-        .cs-flex-group {
-          background-color: var(--accent);
-        }
-
-        .cs-job {
-          color: var(--bodyTextColorWhite);
-          opacity: 0.8;
-        }
-
-        .cs-quote-icon {
-          opacity: 0.2;
-        }
-      }
-    }
-  }
-
   /*-- -------------------------- -->
     <---          Gallery           -->
     <--- -------------------------- -*/
@@ -1367,140 +1371,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
           width: (420/16em);
           height: (629/16em);
         }
-      }
-    }
-  }
-
-  /* Dark mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #gallery {
-        .cs-title {
-          color: var(--bodyTextColorWhite);
-        }
-      }
-    }
-  }
-
-  /*-- -------------------------- -->
-    <---          Reviews           -->
-    <--- -------------------------- -*/
-
-  /* Mobile - 360px */
-  @media only screen and (min-width: 0em) {
-    #reviews {
-      /* Centers the button */
-      text-align: center;
-      padding: var(--sectionPadding);
-
-      .cs-container {
-        width: 100%;
-        max-width: (1104/16rem);
-        margin: auto;
-      }
-
-      .cs-topper {
-        text-align: center;
-        margin-bottom: (16/16rem);
-      }
-
-      .cs-title {
-        text-align: center;
-        max-width: (700/16rem);
-      }
-
-      .cs-text {
-        text-align: center;
-        max-width: (650/16rem);
-        /* 88px - 104px */
-        margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
-      }
-
-      .cs-card-group {
-        /* 48px - 64px */
-        margin: 0 auto clamp(3rem, 5vw, 4rem);
-        padding: 0;
-      }
-
-      .cs-item {
-        text-align: left;
-        list-style: none;
-        width: 100%;
-        max-width: (542/16rem);
-        margin: 0 auto (64/16rem);
-        /* Prevents padding from affecting height & width */
-        box-sizing: border-box;
-        /* Padding L & R - 16px - 32px */
-        padding: (60/16rem) clamp(1rem, 3.2vw, 2rem) 0;
-        /* 32px - 40px */
-        padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
-        background: #fff;
-        box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
-        border-radius: (4/16rem);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        position: relative;
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
-
-      .cs-item-img {
-        width: (80/16rem);
-        height: (80/16rem);
-        position: absolute;
-        top: (-40/16rem);
-      }
-
-      .cs-item-p {
-        font-size: (16/16rem);
-        line-height: 1.5em;
-        margin: 0 0 (20/16rem);
-        padding-bottom: (20/16rem);
-        color: var(--bodyTextColor);
-        border-bottom: 1px solid #e8e9ec;
-      }
-
-      .cs-reviewer {
-        font-size: (16/16rem);
-        font-weight: 700;
-        line-height: 1.5em;
-        width: 40%;
-        margin: 0 auto 0 0;
-        color: var(--headerColor);
-        display: block;
-      }
-
-      .cs-desc {
-        font-size: (14/16rem);
-        font-weight: 400;
-        color: var(#353535);
-        display: block;
-      }
-
-      .cs-item-stars {
-        width: (96/16rem);
-        height: (16/16rem);
-      }
-    }
-  }
-
-  /* Tablet - 768px */
-  @media only screen and (min-width: 48em) {
-    #reviews {
-      .cs-card-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: (16/16rem);
-      }
-
-      .cs-item {
-        /* reset margin so it won't interfere with flexbox */
-        margin: 0;
       }
     }
   }
