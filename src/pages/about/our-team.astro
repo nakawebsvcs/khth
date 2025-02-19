@@ -39,7 +39,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 <div class="cs-image-group">
                     <picture class="cs-picture">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" src="/assets/images/Minna-Lehti.jpg">
+                        <source media="(max-width: 600px)" src="/assets/images/Minna-Lehti-mobile.png">
                         <!--Tablet and above Image-->
                         <source media="(min-width: 601px)" src="/assets/images/Minna-Lehti.jpg">
                         <img loading="lazy" decoding="async" src="/assets/images/Minna-Lehti.jpg" alt="person" width="305" height="320">
@@ -254,10 +254,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             
             .cs-item {
                 max-width: 400px;
                 width: 100%;
+                margin: 0 auto;
             }
 
     }
@@ -273,7 +275,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         .cs-card-group {
             width: 100%;
             max-width: (400/16rem);
-            margin: 0;
+            margin: 0 auto;
             padding: 0;
             display: grid;
             grid-template-columns: repeat(12, 1fr);
@@ -316,7 +318,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
         .cs-image-group {
             width: 100%;
             /* 280px - 320px */
-            height: clamp(17.5rem, 35vw, 20rem);
+            height: clamp(20rem, 40vw, 25rem);
+            min-height: 400px;
             display: flex;
             justify-content: center;
             position: relative;

@@ -22,6 +22,27 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <Landing title="About Us" image={optimizedImage} />
 
  <!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
+
+<section id="cta-1072">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <h2 class="cs-title">At Kids Hurt Too Hawai'i, we believe that children should not be alone in their grief and trauma. The best way to heal is within a supportive community.</h2>
+            </div>
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" src="/assets/images/img-placeholder.png">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" src="/assets/images/img-placeholder.png">
+        <img loading="lazy" decoding="async" src="/assets/images/img-placeholder.png" alt="mechanic" width="1280" height="700">
+    </picture>
+</section>
+ 
+  <!-- ============================================ -->
 <!--                   Steps                      -->
 <!-- ============================================ -->
 
@@ -58,6 +79,36 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 </p>
             </li>
         </ul>
+         <p class="cs-text"> To learn more and stay in touch with KHTH activities, <a href="https://kidshurttoo.dm.networkforgood.com/forms/join-our-mailing-list" target="_blank" class="cs-link">click here</a> to join our mailing list.
+            </p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Video                      -->
+<!-- ============================================ -->
+
+<section id="video-571">
+    <div class="cs-container">
+        <div class="cs-big-link" id="video-container">
+            <iframe 
+                id="youtube-iframe"
+                width="1280" 
+                height="580" 
+                src="https://www.youtube.com/embed/zepO4rBFGQM?enablejsapi=1" 
+                title="Kids Hurt Too Hawaii Video"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                class="cs-background">
+            </iframe>
+        </div>
+        <div class="cs-content">
+            <h2 class="cs-video-title">KIDS HURT TOO HAWAI'I PSA</h2>
+            <p class="cs-text">
+                <em>This PSA was created via 'Ōlelo's PSA Service. This service offers O'ahu's 501(c)3 non-profit organizations, educators, and government agencies a quick and easy way to create simple video messages at no cost. Visit www.olelo.org/psa for more information. </em>
+            </p>
+        </div>
     </div>
 </section>
  
@@ -101,6 +152,90 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
 <style lang="less">
   /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cta-1072 {
+        padding: var(--sectionPadding);
+        background-color: var(--primary);
+        position: relative;
+        min-height: 50vh;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+             justify-content: center; /* Centers content vertically */
+            min-height: inherit; /* Inherits the height from parent */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-flex {
+            max-width: (930/16rem);
+        }
+
+        .cs-title {
+            margin: 0;
+
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* background color overlay */
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: #1a1a1a;
+                opacity: 0.40;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+                object-position: center 100%; /* First value: horizontal, Second value: vertical */
+            }
+        }
+    }
+}
 
  /*-- -------------------------- -->
 <---           Steps            -->
@@ -113,6 +248,31 @@ const optimizedImage = await getOptimizedImage(landingImage)
         position: relative;
         z-index: 1;
         overflow: hidden;
+
+         .cs-link {
+        font-size: inherit;
+        color: var(--primary);
+        text-decoration: none;
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        
+        &:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
 
         .cs-container {
             /* changes to 1280px at tablet */
@@ -136,15 +296,15 @@ const optimizedImage = await getOptimizedImage(landingImage)
             align-items: center;
         }
 
-        .cs-text {
-            font-size: 1.5rem;
-            line-height: 1.5em;
-            text-align: inherit;
-            max-width: (650/16rem);
-            width: 100%;
-            margin: 0;
-            color: var(--bodyTextColor);
-        }
+       .cs-text {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    text-align: inherit;
+    max-width: (650/16rem);
+    width: 100%;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
 
        .cs-card-group {
     width: 100%;
@@ -203,6 +363,120 @@ const optimizedImage = await getOptimizedImage(landingImage)
         .cs-item:nth-child(3) .cs-item-text {
     max-width: 800px;
 }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Video            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #video-571 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 100%;
+            max-width: (1104/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* 20px - 44px */
+            gap: clamp(1.25rem, 5vw, 2.75rem);
+        }
+
+        .cs-video-title {
+            /* 31px - 39px */
+            font-size: clamp(1.9375rem, 6vw, 2.4375rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0;
+            color: var(--headerColor);
+            position: relative;
+        }
+        .cs-big-link {
+            width: 100%;
+            /* 418px - 760px */
+            height: clamp(26.125rem, 50vw, 47.5rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            &:hover {
+                .cs-background {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            /* clips the img from overflowing the container on hover */
+            overflow: hidden;
+            display: block;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            &:before {
+                /* color overlay */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: var(--primary);
+                opacity: 0.72;
+                background-blend-mode: multiply;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 10;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                z-index: -1;
+                transition: transform 0.7s;
+            }
+        }
+
+        .cs-link-icon {
+            /* 64px - 86px */
+            width: clamp(4rem, 7vw, 5.375rem);
+            height: auto;
+            position: absolute;
+            z-index: 10;
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
     }
 }
 
