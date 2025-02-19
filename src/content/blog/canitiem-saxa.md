@@ -1,13 +1,13 @@
 ---
 title: Canitiem Saxa
 description: Lorem markdownum trabeati dicere deus.
-author: Code Stitch
+author: Kids Hurt Too Hawai'i
 date: 2023-06-08T15:28:08.486Z
 tags:
     - post
     - featured
-image: /src/assets/images/blog/blog-cover.jpg
-imageAlt: Kitchen
+image: /src/assets/images/blog/img-placeholder.png
+imageAlt: Grief and Trauma Support
 ---
 
 ## Aut inter Petraeum

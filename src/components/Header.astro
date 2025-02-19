@@ -41,20 +41,16 @@ import { Icon } from 'astro-icon/components';
       >
        {entry.children?.length > 0 ? (
   <div class="cs-parent-wrapper">
-    {entry.key !== "Get Involved" ? (
-      <a
-        href={entry.url}
-        class:list={[
-          "cs-li-link",
-          { "cs-active": Astro.url.pathname === entry.url },
-        ]}
-        aria-current={Astro.url.pathname === entry.url ? "page" : undefined}
-      >
-        {entry.key}
-      </a>
-    ) : (
-      <span class="cs-li-link">{entry.key}</span>
-    )}
+    <a
+  href={entry.url}
+  class:list={[
+    "cs-li-link",
+    { "cs-active": Astro.url.pathname === entry.url },
+  ]}
+  aria-current={Astro.url.pathname === entry.url ? "page" : undefined}
+>
+  {entry.key}
+</a>
     <button
       aria-expanded="false"
       aria-controls={`submenu-${entry.key}`}

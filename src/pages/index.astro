@@ -2,6 +2,16 @@
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts and sort by date
+const allPosts = await getCollection('blog');
+const featuredPosts = allPosts
+  .filter(post => post.data.tags?.includes('featured'))
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
+  .slice(0, 4); // Get top 4 featured posts
+
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "@js/utils"
@@ -33,7 +43,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             target="_blank"
             >Donate</a
           >
-          <a href="volunteer.astro" class="cs-button-solid" target="_blank"
+          <a href="/volunteer/" class="cs-button-solid" target="_blank"
             >Volunteer</a
           >
         </div>
@@ -179,92 +189,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!--                 Side By Side                 -->
-  <!-- ============================================ -->
-
-  <section id="sbs">
-    <div class="cs-container">
-      <!-- Left Image Section -->
-      <div class="cs-left">
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/img-placeholder.png"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/img-placeholder.png"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/img-placeholder.png"
-            alt="cabinets"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/img-placeholder.png"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/img-placeholder.png"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/img-placeholder.png"
-            alt="house"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
-      </div>
-      <!-- Right Content Section-->
-      <div class="cs-right">
-        <h2 class="cs-title">About Us</h2>
-        <p class="cs-text">
-          At Kids Hurt Too Hawai'i, we believe that children should not be alone
-          in their grief and trauma. The best way to heal is within a supportive
-          community.
-        </p>
-        <p class="cs-text">
-          To learn more and stay in touch with KHTH activities,
-          <a
-            href="https://kidshurttoo.dm.networkforgood.com/forms/join-our-mailing-list" target="_blank"
-            >click here</a
-          >
-          to join our mailing list.
-        </p>
-        <div class="cs-flex-group">
-          <p class="cs-flex-p">
-            “We can't prevent domestic violence, victimization of children, and
-            loss of family members. But, we can provide resources that help
-            children cope with those difficult situations.”
-          </p>
-          <span class="cs-name">Cynthia White</span>
-          <span class="cs-job">Co-Founder</span>
-          <img
-            class="cs-quote-icon"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-            alt="gavel"
-            width="136"
-            height="77"
-          />
-        </div>
-        <a href="/ourstories" class="cs-button-solid">Our Stories</a>
-      </div>
-    </div>
-  </section>
-
  <!-- ============================================ -->
     <!--                 Why Choose                   -->
     <!-- ============================================ -->
@@ -298,6 +222,41 @@ const optimizedImage = await getOptimizedImage(landingImage)
             </ul>
         </div>
     </section>
+
+    <!-- ============================================ -->
+<!--                   Blog                       -->
+<!-- ============================================ -->
+
+<section id="blog-846">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Latest News & Updates</h2>
+        </div>
+      <ul class="cs-card-group">
+    {featuredPosts.map((post) => (
+        <li class="cs-item">
+            <div class="cs-picture">
+                <Image 
+                    src={post.data.image}
+                    alt={post.data.imageAlt}
+                    width={369}
+                    height={290}
+                />
+            </div>
+            <div class="cs-item-content">
+                <span class="cs-date">{new Date(post.data.date).toLocaleDateString()}</span>
+                <h3 class="cs-h3">{post.data.title}</h3>
+                <p class="cs-item-text">{post.data.description}</p>
+                <a href={`/updates/${post.id}`} class="cs-link">
+                    Read More
+                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-carrot-right.svg" alt="arrow right" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+                </a>
+            </div>
+        </li>
+    ))}
+</ul>
+    </div>
+</section>
   
 
   <!-- ============================================ -->
@@ -306,7 +265,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
   <section id="gallery">
     <div class="cs-container">
-      <span class="cs-topper">Instagram Feeds</span>
+      <span class="cs-topper">Instagram Feeds Here</span>
     </div>
   </section>
 
@@ -728,6 +687,188 @@ const optimizedImage = await getOptimizedImage(landingImage)
       }
     }
   }
+  /*-- -------------------------- -->
+<---           Blog             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #blog-846 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            border-radius: (24/16rem) 0 (24/16rem) 0;
+            /* clips the img corners */
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.04);
+            grid-column: span 12;
+            position: relative;
+            z-index: 1;
+            &:hover {
+                .cs-picture {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            /* 180px - 290px */
+            height: clamp(11.25rem, 50vw, 18.125rem);
+            /* prevents image from overflowing parent when it scales on hover */
+            overflow: hidden;
+            display: block;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* makes it act like a background image */
+                object-fit: cover;
+                display: block;
+                transition: transform 0.6s;
+            }
+        }
+
+        .cs-item-content {
+            /* 24px - 40px top and bottom */
+            /* 20px - 24px left & right */
+            padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 3vw, 1.25rem);
+            position: relative;
+            z-index: 10;
+        }
+
+        .cs-date {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (20/16rem) 0;
+            color: #767676;
+            display: block;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+            display: block;
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            margin: 0 0 (20/16rem) 0;
+            color: var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-link {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+            color: var(--primary);
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            &:hover {
+                .cs-icon {
+                    transform: translateX(0.625rem);
+                }
+            }
+        }
+
+        .cs-icon {
+            width: (20/16rem);
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #blog-846 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #blog-846 {
+        .cs-item {
+            grid-column: span 3;
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #blog-846 {
+        .cs-item {
+            display: flex;
+            flex-direction: column;
+            grid-column: span 3;
+
+            &:nth-of-type(even) {
+                .cs-picture {
+                    order: 2;
+                }
+            }
+        }
+    }
+}
 /*-- -------------------------- -->
 <---         Why Choose         -->
 <--- -------------------------- -*/
