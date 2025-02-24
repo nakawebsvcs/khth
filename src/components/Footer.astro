@@ -77,7 +77,7 @@ const currentYear = getCurrentYear()
   </div>
 
   <div class="credit">
-    <span class="copyright"> © Copyright <span id="year"></span> Kids Hurt Too Hawai'i</span><br>
+    <span class="copyright"> © Copyright {currentYear} Kids Hurt Too Hawai'i</span><br>
     <span>Website by</span>
     <a href="/" target="_blank" rel="noopener">Nakamura Web Services</a>
   </div>
@@ -326,7 +326,3 @@ const currentYear = getCurrentYear()
 }
 
 </style>
-
-<script>
-  document.getElementById("year").innerHTML = new Date().getFullYear();
-</script>
