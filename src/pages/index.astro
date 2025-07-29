@@ -1,0 +1,1518 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import FAQ from "@components/FAQ.astro";
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts and sort by date
+const allPosts = await getCollection('blog');
+const featuredPosts = allPosts
+  .filter(post => post.data.tags?.includes('featured'))
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
+  .slice(0, 4); // Get top 4 featured posts
+
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="Kids Hurt Too Hawai'i"
+  description="Kids Hurt Too Hawaii offers a free and safe place for children & youth with grief and trauma, ages 3 – 19, as well as support for their caregivers."
+  preloadedImage="{optimizedImage}"
+>
+  <!-- ============================================ -->
+  <!--                    Hero                      -->
+  <!-- ============================================ -->
+
+  <section id="hero-1469">
+    <div class="cs-container">
+      <div class="cs-content">
+        <h1 class="cs-title">KIDS HURT TOO HAWAI'I</h1>
+        <p class="cs-text">
+          Be part of a healing community for children and teens impacted by loss
+          and trauma.
+        </p>
+        <div class="cs-button-group">
+          <a
+            href="https://kidshurttoo.networkforgood.com/projects/183481-heart-of-gold"
+            class="cs-button-solid"
+            target="_blank"
+            >Donate</a
+          >
+          <a href="/volunteer/" class="cs-button-solid"
+            >Volunteer</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Background Image, background image added in the css at 1600px for parallax effect -->
+    <picture class="cs-background">
+      <source
+        media="(max-width: 600px)"
+        srcset="/assets/images/img-placeholder.png"
+      />
+      <source
+        media="(min-width: 601px)"
+        srcset="/assets/images/img-placeholder.png"
+      />
+      <img
+        decoding="async"
+        src="/assets/images/img-placeholder.png"
+        alt="abstract background"
+        width="2250"
+        height="1500"
+        aria-hidden="true"
+      />
+    </picture>
+    <!--SVG Curve-->
+    <svg
+      class="cs-curve"
+      width="1920"
+      height="136"
+      viewBox="0 0 1920 136"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M1920 136V0C1803.21 45.3334 1445.52 136 951 136C456.485 136 111.116 45.3334 0 0V136H951H1920Z"
+        fill="#fff"
+      ></path>
+    </svg>
+  </section>
+
+  <!-- ============================================ -->
+  <!--                  Content                     -->
+  <!-- ============================================ -->
+
+  <section id="content-1450">
+    <div class="cs-container">
+      <div class="cs-content">
+        <p class="cs-text">
+          Kids Hurt Too Hawai'i offers a free and safe place for children and
+          youth ages 3-19 with grief and trauma, as well as support for their
+          caregivers. We offer education and training from knowledgeable
+          specialists and practitioners to provide up-to-date information about
+          the impact of grief and trauma on children and teens.
+        </p>
+        <a href="/programs" class="cs-button-solid">Explore Our Programs</a>
+      </div>
+    </div>
+    <div id="cs-content-1792">
+      <div class="cs-content">
+        <div class="cs-flex-wrapper">
+          <div class="cs-flex">
+            <span class="cs-topper">We are now offering</span>
+            <h2 class="cs-title">School-Based Services</h2>
+          </div>
+          <a href="/programs/healing-young-hearts" class="cs-button-solid">Healing Young Hearts >></a>
+        </div>
+        <div class="cs-wrapper">
+          <p class="cs-text">
+            Kids Hurt Too Hawai'i provides school-based therapeutic peer support
+            groups for children impacted by grief and trauma.
+          </p>
+          <ul class="cs-ul">
+            <li class="cs-li">
+              <img
+                class="cs-check-icon"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/orange-check.svg"
+                alt="checkmark"
+                width="20"
+                height="20"
+              />
+              9-session curriculum offered twice per school year.
+            </li>
+            <li class="cs-li">
+              <img
+                class="cs-check-icon"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/orange-check.svg"
+                alt="checkmark"
+                width="20"
+                height="20"
+              />
+              All services use the Family Strengthening Model.
+            </li>
+            <li class="cs-li">
+              <img
+                class="cs-check-icon"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/orange-check.svg"
+                alt="checkmark"
+                width="20"
+                height="20"
+              />
+              Peer support group structure.
+            </li>
+            <li class="cs-li">
+              <img
+                class="cs-check-icon"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/orange-check.svg"
+                alt="checkmark"
+                width="20"
+                height="20"
+              />
+              Peer groups are child-directed and family-centered.
+            </li>
+            <li class="cs-li">
+              <img
+                class="cs-check-icon"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/orange-check.svg"
+                alt="checkmark"
+                width="20"
+                height="20"
+              />
+              Volunteers are trained and supervised by professional staff.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- ============================================ -->
+    <!--                 Why Choose                   -->
+    <!-- ============================================ -->
+
+    <section id="why-choose-441">
+        <div class="cs-container">
+            <p class="cs-text">
+                Kids Hurt Too Hawai'i has provided grief and trauma support for thousands of children in Hawai'i, trained more than 5,000 adults, and conducted 50 crisis interventions. 
+            </p>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                  <div style="text-align: center">
+                        <span class="cs-number"><span style="color: red">1</span> in 14</span></div>
+                        <p class="cs-item-p">
+                            U.S. children experience a death of a parent or sibling by age 18.</p>
+                            <p class="cs-item-p">
+                            By age 25, this number increases from 5.2 million to 13.2 million.
+                        </p>
+                    </a>
+                </li>
+                <li class="cs-item">
+                   <div style="text-align: center">
+                        <span class="cs-number"><span style="color: red">1</span> in 17</span></div>
+                        <p class="cs-item-p">
+                            Hawai'i children experience a death of a parent or sibling by age 18.</p>
+                            <p class="cs-item-p">
+                            By age 25, this number increases from 18 thousand to 48 thousand.
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+<!--                   Blog                       -->
+<!-- ============================================ -->
+
+<section id="blog-846">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Recent News & Updates</h2>
+        </div>
+      <ul class="cs-card-group">
+    {featuredPosts.map((post) => (
+        <li class="cs-item">
+            <div class="cs-picture">
+                <Image 
+                    src={post.data.image}
+                    alt={post.data.imageAlt}
+                    width={369}
+                    height={290}
+                />
+            </div>
+            <div class="cs-item-content">
+                <span class="cs-date">{new Date(post.data.date).toLocaleDateString()}</span>
+                <h3 class="cs-h3">{post.data.title}</h3>
+                <p class="cs-item-text">{post.data.description}</p>
+                <a href={`/updates/${post.id}`} class="cs-link">
+                    Read More
+                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-carrot-right.svg" alt="arrow right" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+                </a>
+            </div>
+        </li>
+    ))}
+</ul>
+    </div>
+</section>
+  
+
+  <!-- ============================================ -->
+  <!--                   Gallery                    -->
+  <!-- ============================================ -->
+
+  <section id="gallery">
+    <div class="cs-container">
+      <span class="cs-topper">[-- Instagram Feeds Here --]</span>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!--                    FAQ                       -->
+  <!-- ============================================ -->
+  <FAQ />
+
+  <CTA />
+</BaseLayout>
+
+<style lang="less">
+  /* STYLES FOR ABOVE THE FOLD */
+
+  /*-- -------------------------- -->
+    <---           Hero             -->
+    <--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+    #hero-1469 {
+      /* 200px - 288px - leaving extra space for the navigation */
+      padding: clamp(12.5rem, 29.95vw, 18rem) (16/16rem) 0;
+      /* 100px - 288px */
+      padding-bottom: clamp(6.25rem, 20vw, 18rem);
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+
+      &:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #7054fc65;
+        opacity: 0.9;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+      }
+
+      .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+        position: relative;
+      }
+
+      .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        max-width: (616/16rem);
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+      }
+
+      .cs-topper {
+        /* 13px - 16px */
+        font-size: clamp(0.8125rem, 1.6vw, 1rem);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--secondary);
+        margin-bottom: (8/16rem);
+        display: block;
+      }
+
+      .cs-title {
+        /* 39px - 61px */
+        font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 20ch;
+        margin: 0 0 (16/16rem) 0;
+        color: var(--headerColor);
+        position: relative;
+      }
+
+      .cs-text {
+        /* 16px - 24px */
+        font-size: clamp(1rem, 2.3vw, 1.25rem);
+        line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        /* 32px - 40px */
+        margin: 0 0 clamp(2rem, 4vw, 2.5rem) 0;
+        color: #000000;
+      }
+
+      .cs-button-solid {
+        font-size: (16/16rem);
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        overflow: hidden;
+        margin: 0;
+        color: #fff;
+        padding: 0 (48/16rem);
+        border-radius: (30/16rem);
+        background-color: var(--primary);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 100%;
+          width: 0%;
+          background: #f8c27b;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: width 0.3s;
+        }
+
+        &:hover {
+          color: var(--primary);
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+
+      .cs-background {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          /* makes the top of the image start at the top of the parent */
+          object-position: top;
+        }
+      }
+
+      .cs-hide {
+        display: none;
+      }
+
+      .cs-curve {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #hero-1469 {
+      &:before {
+        background: linear-gradient(
+          89deg,
+          #7054fc65 44.46%,
+          rgba(255, 243, 236, 0) 78.47%
+        );
+        opacity: 1;
+      }
+      .cs-container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .cs-content {
+        width: 67%;
+        text-align: left;
+        align-items: flex-start;
+      }
+
+      .cs-hide {
+        display: block;
+        position: absolute;
+        z-index: 10;
+      }
+    }
+  }
+
+  /* Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    #hero-1469 {
+      .cs-flower {
+        display: block;
+        left: (-56/16rem);
+        /* 150px - 280px */
+        top: clamp(9.375rem, 10vw, 17.5rem);
+      }
+    }
+  }
+
+  /* Large Desktop Parallax Effect - 1600px */
+  @media only screen and (min-width: 100rem) {
+    #hero-1469 {
+      .cs-background {
+        background: url("/assets/images/img-placeholder.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /* Larger Desktop - 1800px */
+  @media only screen and (min-width: 112.5rem) {
+    #hero-1469 {
+      .cs-bubbles2 {
+        margin-right: (800/16rem);
+        right: 50%;
+        left: auto;
+        top: (210/16rem);
+        bottom: auto;
+      }
+    }
+  }
+
+  /*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+    #content-1450 {
+      padding: var(--sectionPadding);
+
+      .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+      }
+
+      .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+      }
+
+      .cs-title,
+      .cs-text {
+        max-width: 100%;
+      }
+
+      .cs-text {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        margin: 0 0 (32/16rem) 0;
+      }
+    }
+  }
+
+  /*-- -------------------------- -->
+<---       Content Group        -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+    #cs-content-1792 {
+      width: 100%;
+      max-width: (1280/16rem);
+      margin: auto;
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6.5vw, 4rem);
+
+      .cs-content {
+        /* set text align to center if content needs to be center aligned */
+        text-align: left;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 2rem;
+      }
+
+      .cs-button-solid {
+        margin-bottom: 1.5rem;
+      }
+
+      .cs-flex-wrapper {
+        max-width: (600/16rem);
+        /* lets the div's contents act as though it doesn't exist and can be children of the next surrounding parent div, in this case the cs-content. That way we can place the button under the cs-wrapper on mobile, but bring it back under the header on tablet */
+        display: contents;
+      }
+
+      .cs-title {
+        margin: 0;
+        /* 16px - 32px */
+        margin-bottom: clamp(1rem, 3vw, 2rem);
+      }
+
+      .cs-wrapper {
+        max-width: (632/16rem);
+      }
+
+      .cs-text {
+        margin: 0 0 (32/16rem) 0;
+      }
+
+      .cs-text {
+        max-width: (640/16rem);
+        margin-bottom: (24/16rem);
+        position: relative;
+        z-index: 1;
+      }
+
+      .cs-ul {
+        max-width: (630/16rem);
+        margin: 0 0 (32/16rem) 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: (12/16rem);
+      }
+
+      .cs-li {
+        font-size: var(--bodyFontSize);
+        list-style: none;
+        line-height: 1.5em;
+        width: 100%;
+        color: var(--bodyTextColor);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: (8/16rem);
+      }
+
+      .cs-check-icon {
+        width: (24/16rem);
+        height: auto;
+        /* adds extra space between the icon and top of parent so it's more centered */
+        margin-top: 1px;
+        display: block;
+      }
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #cs-content-1792 {
+      .cs-content {
+        text-align: left;
+        max-width: (1280/16rem);
+        margin-top: 4rem;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: (48/16rem);
+        columns: 2;
+      }
+
+      .cs-flex-wrapper {
+        width: 40vw;
+        display: block;
+        /* prevents flexbox from squishing it */
+        flex: none;
+      }
+
+      .cs-ul {
+        margin: 0;
+      }
+    }
+  }
+
+  /* Large Desktop - 1300px */
+  @media only screen and (min-width: 81.25rem) {
+    #cs-content-1792 {
+      .cs-ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .cs-li {
+        width: 48%;
+      }
+    }
+  }
+  /*-- -------------------------- -->
+<---           Blog             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #blog-846 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            border-radius: (24/16rem) 0 (24/16rem) 0;
+            /* clips the img corners */
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.04);
+            grid-column: span 12;
+            position: relative;
+            z-index: 1;
+            &:hover {
+                .cs-picture {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            /* 180px - 290px */
+            height: clamp(11.25rem, 50vw, 18.125rem);
+            /* prevents image from overflowing parent when it scales on hover */
+            overflow: hidden;
+            display: block;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* makes it act like a background image */
+                object-fit: cover;
+                display: block;
+                transition: transform 0.6s;
+            }
+        }
+
+        .cs-item-content {
+            /* 24px - 40px top and bottom */
+            /* 20px - 24px left & right */
+            padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 3vw, 1.25rem);
+            position: relative;
+            z-index: 10;
+        }
+
+        .cs-date {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (20/16rem) 0;
+            color: #767676;
+            display: block;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+            display: block;
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            margin: 0 0 (20/16rem) 0;
+            color: var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-link {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+            color: var(--primary);
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            &:hover {
+                .cs-icon {
+                    transform: translateX(0.625rem);
+                }
+            }
+        }
+
+        .cs-icon {
+            width: (20/16rem);
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #blog-846 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #blog-846 {
+        .cs-item {
+            grid-column: span 3;
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #blog-846 {
+        .cs-item {
+            display: flex;
+            flex-direction: column;
+            grid-column: span 3;
+
+            &:nth-of-type(even) {
+                .cs-picture {
+                    order: 2;
+                }
+            }
+        }
+    }
+}
+/*-- -------------------------- -->
+<---         Why Choose         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #why-choose-441 {
+        padding: var(--sectionPadding);
+        background-color: #fafbfc;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16em);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-text {
+          font-size: 2rem;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            /* 12px - 20px */
+            gap: clamp(0.75rem, 1.5vw, 1.25rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            /* changes on tablet */
+            max-width: (462/16rem);
+            /* 24px - 40px top & bottom */
+            /* 24px - 40px left & right */
+            padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            border-radius: (16/16rem);
+            background-color: #fff;
+            border: 1px solid #dad9e3;
+            box-shadow: 0px 24px 54px rgba(87, 107, 147, 0.12);
+            position: relative;
+        }
+
+        .cs-item-p {
+          margin: 1rem;
+        }
+
+        .cs-link {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cs-icon {
+            /* 24px - 32px */
+            height: clamp(1.5rem, 2vw, 2rem);
+            width: auto;
+        }
+
+        .cs-number {
+            font-size: var(--headerFontSize);
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.2em;
+            margin: 0;
+            margin-bottom: (4/16rem);
+            color: var(--headerColor);
+            transition: color 0.3s;
+        }
+
+        .cs-desc {
+            /* 14px - 20px */
+            font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+            text-align: center;
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+            transition: color 0.3s;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #why-choose-441 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-card-group {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .cs-item {
+            width: 100%;
+        }
+    }
+}
+  /*-- -------------------------- -->
+    <---          Services          -->
+    <--- -------------------------- -*/
+
+  /* Mobile */
+  @media only screen and (min-width: 0em) {
+    .services {
+      width: 90%;
+      max-width: (1320/16em);
+      margin: auto;
+      margin-top: (-167/16em);
+      margin-bottom: (50/16em);
+      padding: (50/16em) (20/16em);
+      background: #fff;
+      box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+      border-top: (6/16em) solid var(--primary);
+      border-radius: (5/16em);
+      position: relative;
+      z-index: 100;
+      .card {
+        width: 100%;
+        max-width: (357/16em);
+        margin: auto;
+        margin-bottom: (50/16em);
+        display: block;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        picture {
+          width: (88/16em);
+          height: (88/16em);
+          margin: auto;
+          margin-bottom: (23/16em);
+          background: var(--primary);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: (48/16em);
+            height: (48/16em);
+          }
+        }
+        h2 {
+          font-size: (32/16em);
+          font-weight: 700;
+          line-height: 27/20em;
+          text-align: center;
+          margin-bottom: 13/20em;
+          color: #1a1a1a;
+        }
+        p {
+          line-height: 24/18em;
+          text-align: center;
+          width: 100%;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  /* Inbetween */
+  @media only screen and (min-width: 768px) {
+    .services {
+      font-size: ~"min(1.8vw, 1em)";
+      width: 98%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .card {
+        max-width: (325/16em);
+        margin: 0;
+      }
+    }
+  }
+
+  /* Large Desktop */
+  @media only screen and (min-width: 1300px) {
+    .services {
+      padding: (50/16em) (80/16em);
+
+      .card {
+        max-width: (357/16em);
+      }
+    }
+  }
+
+  /* PAGE-SPECIFIC STYLES FOR THE HOME PAGE */
+
+  /*-- -------------------------- -->
+    <---       Side By Side         -->
+    <--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0em) {
+    #sbs {
+      padding: var(--sectionPadding);
+
+      .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: (40/16rem);
+      }
+
+      .cs-left {
+        /* scaling the font size with the view width */
+        font-size: ~"min(2.31vw, .7em)";
+        /* using ems so we can use font size to scale the whole section */
+        width: (631/16em);
+        height: (636/16em);
+        position: relative;
+      }
+
+      .cs-picture {
+        border-radius: (24/16em);
+        display: block;
+        position: absolute;
+        /* clips img tag corners */
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          /* makes image act like a background image */
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .cs-picture1 {
+        width: (522/16em);
+        height: (581/16em);
+        top: 0;
+        left: 0;
+      }
+
+      .cs-picture2 {
+        width: (414/16em);
+        height: (400/16em);
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
+        /* 6px - 12px */
+        border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
+        right: 0;
+        bottom: 0;
+      }
+
+      .cs-right {
+        max-width: (542/16rem);
+        margin: auto;
+      }
+
+      .cs-topper {
+        text-align: left;
+        margin-bottom: (4/16rem);
+      }
+
+      .cs-title {
+        text-align: left;
+        max-width: (800/16rem);
+      }
+
+      .cs-text {
+        text-align: left;
+        max-width: (750/16rem);
+        margin-bottom: (16/16rem);
+
+        &:last-of-type {
+          margin-bottom: (32/16rem);
+        }
+      }
+
+      .cs-flex-group {
+        /* 16px - 32px */
+        padding: clamp(1rem, 3vw, 2rem);
+        background-color: #f7f7f7;
+        border-radius: (16/16rem);
+        position: relative;
+      }
+
+      .cs-flex-p {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        margin: 0 0 (16/16rem);
+        color: #353535;
+      }
+
+      .cs-name {
+        font-size: (16/16rem);
+        font-weight: bold;
+        line-height: 1.2em;
+        text-transform: uppercase;
+        margin: 0 0 (4/16rem);
+        color: var(--headerColor);
+        display: block;
+      }
+
+      .cs-job {
+        font-size: (14/16rem);
+        line-height: 1.5em;
+        color: #353535;
+        display: block;
+      }
+
+      .cs-quote-icon {
+        /* 60px - 136px */
+        width: clamp(3.75rem, 10vw, 8.5rem);
+        height: auto;
+        position: absolute;
+        /* 16px - 32px */
+        right: clamp(1rem, 4vw, 2rem);
+        bottom: (0/16rem);
+      }
+
+      .cs-button-solid {
+        margin-top: (32/16rem);
+      }
+    }
+  }
+
+  /* Desktop - 1024px */
+  @media only screen and (min-width: 64em) {
+    #sbs {
+      .cs-container {
+        flex-flow: row;
+        justify-content: space-between;
+        gap: (52/16rem);
+      }
+
+      .cs-left {
+        font-size: ~"min(1.2vw, 1em)";
+        flex: none;
+      }
+
+      .cs-right {
+        margin: 0;
+      }
+    }
+  }
+
+
+  /*-- -------------------------- -->
+    <---       Side By Side         -->
+    <--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0em) {
+    #sbs-r {
+      padding: var(--sectionPadding);
+
+      .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: (40/16rem);
+      }
+
+      .cs-left {
+        /* scaling the font size with the view width */
+        font-size: ~"min(2.31vw, .7em)";
+        /* using ems so we can use font size to scale the whole section */
+        width: (631/16em);
+        height: (636/16em);
+        position: relative;
+      }
+
+      .cs-picture {
+        border-radius: (24/16em);
+        display: block;
+        position: absolute;
+        /* clips img tag corners */
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          /* makes image act like a background image */
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .cs-picture1 {
+        width: (522/16em);
+        height: (581/16em);
+        top: 0;
+        right: 0;
+      }
+
+      .cs-picture2 {
+        width: (414/16em);
+        height: (400/16em);
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
+        /* 6px - 12px */
+        border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
+        bottom: 0;
+        left: 0;
+      }
+
+      .cs-right {
+        max-width: (542/16rem);
+        margin: auto;
+      }
+
+      .cs-topper {
+        text-align: left;
+        margin-bottom: (4/16rem);
+      }
+
+      .cs-title {
+        text-align: left;
+        max-width: (800/16rem);
+      }
+
+      .cs-text {
+        text-align: left;
+        max-width: (750/16rem);
+        margin-bottom: (16/16rem);
+        &:last-of-type {
+          margin-bottom: (32/16rem);
+        }
+      }
+
+      .cs-flex-group {
+        /* 16px - 32px */
+        padding: clamp(1rem, 3vw, 2rem);
+        background-color: #f7f7f7;
+        border-radius: (16/16rem);
+        position: relative;
+      }
+
+      .cs-flex-p {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        margin: 0 0 (16/16rem);
+        color: #353535;
+      }
+
+      .cs-name {
+        font-size: (16/16rem);
+        font-weight: bold;
+        line-height: 1.2em;
+        text-transform: uppercase;
+        margin: 0 0 (4/16rem);
+        color: var(--headerColor);
+        display: block;
+      }
+
+      .cs-job {
+        font-size: (14/16rem);
+        line-height: 1.5em;
+        color: #353535;
+        display: block;
+      }
+
+      .cs-quote-icon {
+        /* 60px - 136px */
+        width: clamp(3.75rem, 10vw, 8.5rem);
+        height: auto;
+        position: absolute;
+        /* 16px - 32px */
+        right: clamp(1rem, 4vw, 2rem);
+        bottom: (0/16rem);
+      }
+    }
+  }
+
+  /* Desktop - 1024px */
+  @media only screen and (min-width: 64em) {
+    #sbs-r {
+      .cs-container {
+        flex-flow: row;
+        justify-content: space-between;
+        gap: (52/16rem);
+      }
+
+      .cs-left {
+        font-size: ~"min(1.2vw, 1em)";
+        /* sends it to the right */
+        order: 2;
+        flex: none;
+      }
+
+      .cs-right {
+        margin: 0;
+      }
+    }
+  }
+
+  /*-- -------------------------- -->
+    <---          Gallery           -->
+    <--- -------------------------- -*/
+
+  /* Mobile - 360px - Contains hover animation */
+  @media only screen and (min-width: 0em) {
+    #gallery {
+      /* Centers button */
+      text-align: center;
+      padding: var(--sectionPadding);
+      position: relative;
+      /* Prevents overflow from the image going off screen */
+      overflow: hidden;
+      .cs-container {
+        width: 100%;
+        max-width: (1322/16em);
+        margin: auto;
+      }
+
+      .cs-topper {
+        text-align: center;
+        margin-bottom: (16/16rem);
+      }
+
+      .cs-title {
+        text-align: center;
+        max-width: (621/16rem);
+        margin-bottom: (40/16rem);
+      }
+
+      .cs-image-group {
+        /* used rem so it doesn't scale with the font size of on parent */
+        font-size: ~"min(1.1vw, 1em)";
+        width: 100%;
+        max-width: (1322/16em);
+        margin: 0 auto (60/16rem);
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: (30/16em);
+      }
+
+      .cs-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: (30/16em);
+      }
+
+      .cs-picture {
+        display: block;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .cs-row-1 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (567/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (512/16em);
+        }
+      }
+
+      .cs-row-2 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (492/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (517/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+      }
+
+      .cs-row-3 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (625/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (452/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+      }
+    }
+  }
+</style>

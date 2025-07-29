@@ -1,0 +1,328 @@
+---
+import client from "@data/client.json";
+import navData from "@data/navData.json";
+import { getCurrentYear } from "@js/utils"
+
+const currentYear = getCurrentYear()
+---
+
+<!-- ============================================ --><!--                   Footer                     --><!-- ============================================ -->
+<footer id="footer">
+  <div class="container">
+    <div class="left-section">
+      <div style="display: flex; align-items: center;">
+      <a class="logo" href="/"
+        ><img src="/Logo-1-300x200.png"></a
+      ><h2 style="color: var(--primary); margin-top: -25px;">Kids Hurt Too Hawai'i</h2>
+      </div>
+      <p>
+        The name “Kids Hurt Too” was chosen by children in 2006. In 2011, the official name of the organization became “Kids Hurt Too Hawai'i.” Since its beginning, Kids Hurt Too Hawai'i has provided group support and training services to thousands of children, youth, caregivers, and providers.
+      </p>
+      <a href="https://kidshurttoo.dm.networkforgood.com/forms/join-our-mailing-list"><h2 style="color: var(--primary); font-size: 1.2rem; margin-top: 2rem;">Join Our Mailing list</h2></a>
+      <a href="https://www.auw.org/give" target="_blank"><img src="/assets/images/AUW.jpg" width="90%" style="margin-top: 3rem;"/></a>
+      <h2 style="color: white; font-size: 1.2rem;">Kids Hurt Too Hawai'i #73910</h2>
+    </div>
+    <div class="right-section">
+      <div class="lists">
+        <ul>
+          <li>
+            <h2>Information</h2>
+          </li>
+          {
+            navData.map((entry) => (
+              <li class="cs-li">
+                <a href={entry.url}>
+                  {entry.key}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <ul>
+          <li>
+            <h2>Our Socials</h2>
+          </li>
+          <li><a href="https://www.facebook.com/kidshurttoo/" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/kidshurttoohawaii/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.youtube.com/channel/UCPFeA4n6RaUBAZrushFLM8A?view_as=subscriber" target="_blank">YouTube</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h2>Contact</h2>
+          </li>
+          <li>
+            <a href="/contact">
+              {client.address.lineOne}<br />
+              {client.address.lineTwo}<br />
+              {client.address.city}
+              {client.address.state}
+              {client.address.zip}
+            </a>
+          </li>
+          <li>
+            <a href={`tel:${client.phoneForTel}`}>
+              T:
+              {client.phoneFormatted}
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${client.email}`}>Click to Email</a>
+          </li>
+           <li>
+            <a href="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_pp_142x27.png"><img src="/assets/images/btn_donate_pp_142x27.png"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="credit">
+    <span class="copyright"> © Copyright {currentYear} Kids Hurt Too Hawai'i</span><br>
+    <span>Website by</span>
+    <a href="/" target="_blank" rel="noopener">Nakamura Web Services</a>
+  </div>
+</footer>
+
+<style lang="less">
+  /* Mobile */
+@media only screen and (min-width: 0em) {
+  #footer {
+    font-size: ~"min(4vw, 1.2em)";
+    padding: (84/16rem) 0 (20/16rem);
+    background: #A0A8FC;
+
+    .left-section {
+      text-align: center;
+      margin: auto;
+      margin-bottom: (50/16rem);
+
+      .logo {
+        text-align: center;
+        width: auto;
+        height: (32/16em);
+        margin-right: 1rem;
+        margin-bottom: (30/16em);
+        display: inline-block;
+
+        img {
+          width: auto;
+          height: 100%;
+          display: block;
+        }
+      }
+
+      p {
+        font-size: (14/16rem);
+        line-height: 27/14;
+        text-align: center;
+        width: 100%;
+        width: 307/14rem;
+        margin: auto;
+        color: #000;
+        opacity: 0.9;
+      }
+    }
+
+    .right-section {
+      width: 96%;
+      max-width: (407/16rem);
+      margin: auto;
+      .lists {
+        width: 96%;
+        max-width: (307/16rem);
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        ul {
+          margin-top: 0;
+          margin-bottom: 0;
+          padding: 0;
+
+          &:nth-of-type(3) {
+            margin-top: (50/16rem);
+            li {
+              margin-bottom: (16/16rem);
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              &:last-of-type {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          li {
+            font-size: (18/16rem);
+            list-style: none;
+            margin-bottom: (12/16rem);
+            color: #000;
+            opacity: 0.9;
+
+            a {
+              line-height: 21/18em;
+              text-decoration: none;
+              color: #000;
+              transition: color 0.3s;
+              &:hover {
+                color: var(--bodyTextColorWhite);
+              }
+            }
+          }
+          h2 {
+            font-size: (18/16rem);
+            font-weight: bold;
+            line-height: 21/18em;
+            text-transform: uppercase;
+            margin-bottom: (37/16rem);
+            color: #000;
+            position: relative;
+
+            &:before {
+              content: "";
+              width: (97/16rem);
+              height: (2/16rem);
+              background: var(--primary);
+              opacity: 1;
+              display: block;
+              position: absolute;
+              bottom: (-16/16rem);
+              left: 0;
+            }
+          }
+        }
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+      }
+
+      .cs-button-solid {
+        width: (250/16rem);
+        height: (53/16rem);
+        margin: 0;
+        padding-top: (3/16rem);
+      }
+    }
+
+    .credit {
+      font-size: (16/16rem);
+      line-height: (36/16rem);
+      text-align: center;
+      width: 96%;
+      margin: auto;
+      margin-top: (100/16rem);
+      color: #000;
+
+      a {
+        font-size: (16/16rem);
+        text-decoration: none;
+        color: #000;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .copyright {
+        font-size: (16/16rem);
+        display: block;
+      }
+    }
+  }
+}
+
+/* Small Desktop */
+@media only screen and (min-width: 64em) {
+  #footer {
+    font-size: ~"min(1.2vw, 1em)";
+    .container {
+      width: 96%;
+      max-width: (1320/16rem);
+      margin: auto;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+    .left-section {
+      text-align: left;
+      width: (409/16rem);
+      margin: 0;
+
+      .logo {
+        text-align: left;
+        height: (40/16rem);
+        margin-left: 0;
+      }
+
+      p {
+        text-align: left;
+        margin-left: 0;
+      }
+    }
+
+    .right-section {
+      width: (609/16rem);
+      max-width: none;
+      margin: 0;
+      .lists {
+        width: 96%;
+        max-width: (769/16rem);
+        max-width: initial;
+        margin: 0;
+
+        ul {
+          &:nth-of-type(3) {
+            margin-top: 0;
+
+            li:first-of-type {
+              margin-bottom: 0;
+            }
+          }
+
+          li {
+            a {
+              position: relative;
+
+              &:before {
+                content: "";
+                width: 0%;
+                height: (2/16rem);
+                background: var(--bodyTextColorWhite);
+                opacity: 1;
+                display: block;
+                position: absolute;
+                bottom: (-3/16rem);
+                left: 0;
+                transition: width 0.3s;
+              }
+
+              &:hover {
+                &:before {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .buttons {
+        justify-content: flex-start;
+      }
+    }
+
+    .credit {
+      .copyright {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+</style>

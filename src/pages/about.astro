@@ -1,0 +1,610 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import Landing from "@components/Landing.astro";
+import FAQ from "@components/FAQ.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="About"
+  description="Meta description here"
+  preloadedImage={optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <Landing title="About Us" image={optimizedImage} />
+
+ <!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
+
+<section id="cta-1072">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <h2 class="cs-title">At Kids Hurt Too Hawai'i, we believe that children should not be alone in their grief and trauma. The best way to heal is within a supportive community.</h2>
+            </div>
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" src="/assets/images/img-placeholder.png">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" src="/assets/images/img-placeholder.png">
+        <img loading="lazy" decoding="async" src="/assets/images/img-placeholder.png" alt="mechanic" width="1280" height="700">
+    </picture>
+</section>
+ 
+  <!-- ============================================ -->
+<!--                   Steps                      -->
+<!-- ============================================ -->
+
+<section id="steps-1209">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text"> Since its beginning in 2001, Kids Hurt Too Hawai'i has provided group
+          support and training services to thousands of children, youth,
+          caregivers, and providers.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <h3 class="cs-h3">MISSION</h3>
+                <p class="cs-item-text">
+                    To strengthen connections to the community by bringing together children, teens, and their parents impacted by grief and trauma in safe and healing ways.
+                </p>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">VISION</h3>
+                <p class="cs-item-text">
+                    To restore healthy growth and development in children with grief and trauma, and stabilize families in crisis.
+                </p>
+            </li>
+             <li class="cs-item">
+                <h3 class="cs-h3">VALUES</h3>
+                <p class="cs-item-text">
+                    EXCELLENCE: Delivering what we promise and exceeding expectations.<br />
+                    BE REAL: Honesty and integrity always.<br />
+                    PASSION: Inspired to care about the individual, organization, and community.<br />
+                    COLLABORATION: Value everyone and work together for the common good.<br />
+                    DETERMINATION: Committed to giving our best in everything we do.<br />
+                    RESPECT: We follow the Golden Rule in everything we do: "Do unto others..."
+                </p>
+            </li>
+        </ul>
+         <p class="cs-text"> To learn more and stay in touch with KHTH activities, <a href="https://kidshurttoo.dm.networkforgood.com/forms/join-our-mailing-list" target="_blank" class="cs-link">click here</a> to join our mailing list.
+            </p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Video                      -->
+<!-- ============================================ -->
+
+<section id="video-571">
+    <div class="cs-container">
+        <div class="cs-big-link" id="video-container">
+            <iframe 
+                id="youtube-iframe"
+                width="1280" 
+                height="580" 
+                src="https://www.youtube.com/embed/zepO4rBFGQM?enablejsapi=1" 
+                title="Kids Hurt Too Hawaii Video"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                class="cs-background">
+            </iframe>
+        </div>
+        <div class="cs-content">
+            <h2 class="cs-video-title">KIDS HURT TOO HAWAI'I PSA</h2>
+            <p class="cs-text">
+                <em>This PSA was created via 'Ōlelo's PSA Service. This service offers O'ahu's 501(c)3 non-profit organizations, educators, and government agencies a quick and easy way to create simple video messages at no cost. Visit www.olelo.org/psa for more information. </em>
+            </p>
+        </div>
+    </div>
+</section>
+ 
+  <!-- ============================================ -->
+<!--                  Locations                   -->
+<!-- ============================================ -->
+<h1 class="cs-h1" style="margin-bottom: 3rem; text-align: center;">Locations</h1>
+<section id="locations-1845">
+    <div class="cs-container">
+        <ul class="cs-card-group">
+            <li class="cs-item">
+               <span style="font-size: 2rem; color: white;">⟟</span>
+                <h3 class="cs-h3">
+                    Honolulu
+                </h3>
+                <p class="cs-item-text">
+                    245 North Kukui Street, Suite 102<br /> Honolulu, HI 96817
+                </p>
+            </li>
+            <li class="cs-item">
+                <span style="font-size: 2rem; color: white;">⟟</span>
+                <h3 class="cs-h3">
+                    Maui
+                </h3>
+                <p class="cs-item-text">
+                    Maui Address<br /> Wailuku, HI 96732
+                </p>
+            </li>
+        </ul>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="/assets/images/img-placeholder.png">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="/assets/images/img-placeholder.png">
+        <img loading="lazy" decoding="async" src="/assets/images/img-placeholder.png" alt="lobby" width="1400" height="730">
+    </picture>
+</section>
+  <CTA />
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cta-1072 {
+        padding: var(--sectionPadding);
+        background-color: var(--primary);
+        position: relative;
+        min-height: 50vh;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+             justify-content: center; /* Centers content vertically */
+            min-height: inherit; /* Inherits the height from parent */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-flex {
+            max-width: (930/16rem);
+        }
+
+        .cs-title {
+            margin: 0;
+
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* background color overlay */
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: #1a1a1a;
+                opacity: 0.40;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+                object-position: center 100%; /* First value: horizontal, Second value: vertical */
+            }
+        }
+    }
+}
+
+ /*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-1209 {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+
+         .cs-link {
+        font-size: inherit;
+        color: var(--primary);
+        text-decoration: none;
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        
+        &:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+
+        .cs-container {
+            /* changes to 1280px at tablet */
+            max-width: (704/16rem);
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+       .cs-text {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    text-align: inherit;
+    max-width: (650/16rem);
+    width: 100%;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+
+       .cs-card-group {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+}
+
+.cs-item {
+    text-align: center;
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F8C27B;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            max-width: (413/16rem);
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-1209 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 4;
+
+            &:after {
+                display: block;
+            }
+        }
+        .cs-item:nth-child(3) .cs-item-text {
+    max-width: 800px;
+}
+    }
+}
+
+/*-- -------------------------- -->
+<---           Video            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #video-571 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 100%;
+            max-width: (1104/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* 20px - 44px */
+            gap: clamp(1.25rem, 5vw, 2.75rem);
+        }
+
+        .cs-video-title {
+            /* 31px - 39px */
+            font-size: clamp(1.9375rem, 6vw, 2.4375rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0;
+            color: var(--headerColor);
+            position: relative;
+        }
+        .cs-big-link {
+            width: 100%;
+            /* 418px - 760px */
+            height: clamp(26.125rem, 50vw, 47.5rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            &:hover {
+                .cs-background {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            /* clips the img from overflowing the container on hover */
+            overflow: hidden;
+            display: block;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            &:before {
+                /* color overlay */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: var(--primary);
+                opacity: 0.72;
+                background-blend-mode: multiply;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 10;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                z-index: -1;
+                transition: transform 0.7s;
+            }
+        }
+
+        .cs-link-icon {
+            /* 64px - 86px */
+            width: clamp(4rem, 7vw, 5.375rem);
+            height: auto;
+            position: absolute;
+            z-index: 10;
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---         Locations          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #locations-1845 {
+        padding: var(--sectionPadding);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .cs-container {
+            max-width: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(4rem, 6vw, 4rem);
+            place-items: center;
+        }
+
+        .cs-item {
+            text-align: center;
+            list-style: none;
+            width: 100%;
+            max-width: (462/16rem);
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            /* 32px - 40px top & bottom */
+            padding: clamp(4rem, 6vw, 4.5rem) (32/16rem);
+            background-color: var(--primary);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            grid-column: span 12;
+            gap: (18/16rem);
+            transition: background-color .3s;
+
+            &:hover {
+                background-color: #f8c27b;
+                cursor: pointer;
+
+                .cs-h3 {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-item-text {
+                    color: var(--bodyTextColorWhite);
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            margin: 0;
+            color: #fff;
+        }
+
+        .cs-item-text {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.6vw, 1rem);
+            line-height: 1.5em;
+            margin: 0;
+            color: #fff;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+                object-position: top;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #000000;
+                pointer-events: none;
+                opacity: 0.20;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #locations-1845 {
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+
+</style>

@@ -1,0 +1,669 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import Landing from "@components/Landing.astro";
+import FAQ from "@components/FAQ.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="Our Donors and Partners"
+  description="Meta description for the page"
+  preloadedImage = {optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <Landing 
+    title="Our Donors and Partners"
+    image={optimizedImage}
+  />
+
+  <!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text">
+                We value our generous and consistent donors and partners whose support is Healing Young Hearts at Kids Hurt Too Hawai'i.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    Pricing                   -->
+<!-- ============================================ -->
+
+<section id="pricing-1753">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">2024 Donors</h2>
+        </div>
+        <div class="cs-wrapper">
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $25,000 - $49,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">The Tarence T.C. Ching Foundation</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $10,000 - $24,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Marin Community Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Cooke Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Victoria S. and Bradley L. Geist Foundation</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $1,000 - $9,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Hawai`i Children's Trust Fund of the Hawai`i Community Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Macy's Foundation</span>
+                    </div>
+                </li>
+            </ul>
+             <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $0 - $999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Target</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Network for Good</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Mike Yokoyama</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Aloha United Way</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Green Tea Hawai'i</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Locations Foundation</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Ilima at Leihano</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Victoria Moynihan</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Cynthia White & Hiro Ito</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- 2023 Donors -->
+ 
+<section id="pricing-1753" style="background-color: white;">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">2023 Donors</h2>
+        </div>
+        <div class="cs-wrapper">
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $25,000 - $49,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">The Tarence T.C. Ching Foundation</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $10,000 - $24,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Marin Community Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Cooke Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Victoria S. and Bradley L. Geist Foundation</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $1,000 - $9,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Hawai`i Children's Trust Fund of the Hawai`i Community Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Macy's Foundation</span>
+                    </div>
+                </li>
+            </ul>
+             <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $0 - $999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Target</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Network for Good</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Mike Yokoyama</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Aloha United Way</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Green Tea Hawai'i</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Locations Foundation</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Ilima at Leihano</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Victoria Moynihan</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Cynthia White & Hiro Ito</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- 2022 Donors -->
+ 
+<section id="pricing-1753">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">2022 Donors</h2>
+        </div>
+        <div class="cs-wrapper">
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $25,000 - $49,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">The Tarence T.C. Ching Foundation</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $10,000 - $24,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Marin Community Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Cooke Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Victoria S. and Bradley L. Geist Foundation</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $1,000 - $9,999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Hawai`i Children's Trust Fund of the Hawai`i Community Foundation</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Macy's Foundation</span>
+                    </div>
+                </li>
+            </ul>
+             <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        $0 - $999
+                    </h3>
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Target</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Network for Good</span>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Mike Yokoyama</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Aloha United Way</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Green Tea Hawai'i</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Locations Foundation</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Ilima at Leihano</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Victoria Moynihan</span>
+                    </div>
+                </li>
+                 <li class="cs-item">
+                    <div class="cs-item-wrapper">
+                        <span class="cs-package">Cynthia White & Hiro Ito</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Logos                      -->
+<!-- ============================================ -->
+
+<section id="logos-857">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Our Partners</h2>
+        </div>
+        <div class="cs-logo-group">
+            <!--Ideally you want to use svg's for the file path image, which is why these aren't wrapped in picture elements for different screen sizes-->
+            <img class="cs-logo" src="https://kidshurttoo.org/wp-content/uploads/2021/01/FINALSSSLOGO2019PNG-300x194.png" alt="logo" width="200" height="85" loading="lazy" decoding="async">
+            <img class="cs-logo" src="https://kidshurttoo.org/wp-content/uploads/2020/11/koalohalogo.png" alt="logo" width="200" height="85" loading="lazy" decoding="async">
+            <img class="cs-logo" src="https://kidshurttoo.org/wp-content/uploads/2020/11/Na-Kama-Kai-Sol-Shop-logo.png" alt="logo" width="200" height="85" loading="lazy" decoding="async">
+            <img class="cs-logo" src="https://kidshurttoo.org/wp-content/uploads/2020/11/kanewailogoc-1.jpg" alt="logo" width="200" height="85" loading="lazy" decoding="async">
+            <img class="cs-logo" src="https://kidshurttoo.org/wp-content/uploads/2020/11/logo-RGB-screen-res-72ppi-transparent-background.png" alt="logo" width="200" height="85" loading="lazy" decoding="async">
+        </div>
+    </div>
+</section>
+                                
+                                
+  <CTA />
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+
+  /*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #content-1450 {
+        padding: var(--sectionPadding);
+        
+        .cs-container {
+            width: 100%;
+            max-width: (1000/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title, .cs-text {
+            max-width: 100%;
+        }
+
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1.5rem, 2vw, 1.5rem);
+            margin: 0 0 (32/16rem) 0;
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+	    	font-weight: 700;
+	        text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (48/16rem);
+            background-color: var(--primary);
+            border-radius: (8/16rem);
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width .3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Pricing          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #pricing-1753 {
+        padding: var(--sectionPadding);
+        /* 100px - 250px */
+        padding-bottom: clamp(6.25rem, 13vw, 15.625rem);
+        background-color: #f7f7f7;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-title {
+            margin: 0;
+            max-width: 23ch;
+        }
+
+        .cs-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: (48/16rem);
+        }
+
+        .cs-card-group {
+            text-align: center;
+            width: 100%;
+            padding: (0/16rem) clamp(1rem, 2vw, 2rem);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: (24/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: (24/16rem);
+        }
+
+        .cs-item-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: (8/16rem);
+        }
+
+        .cs-h3 {
+            font-size: (25/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+        }
+
+        .cs-package {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+            opacity: 0.8;
+        }
+
+        .cs-graphic {
+            width: 100%;
+            min-width: (1920/16rem);
+            height: auto;
+            position: absolute;
+            bottom: (-2/16rem);
+            left: (0/16rem);
+            z-index: -1;
+        }
+
+        .cs-dark {
+            display: none;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #pricing-1753 {
+        .cs-wrapper {
+            flex-direction: row;
+            align-items: flex-start;
+            /* 16px - 20px */
+            gap: clamp(1rem, 3vw, 1.25rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Logos            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #logos-857 {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (800/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-logo-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: (40/16rem);
+        }
+
+        .cs-logo {
+            width: 40%;
+            max-width: (160/16rem);
+            height: auto;
+            margin: 0;
+            display: block;
+        }
+    }
+}
+
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #logos-857 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+    }
+}
+                                
+</style>

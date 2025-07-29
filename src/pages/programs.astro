@@ -1,0 +1,397 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import Landing from "@components/Landing.astro";
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="Projects"
+  description="Meta description for the page"
+  preloadedImage = {optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <Landing 
+    title="Our Programs"
+    image={optimizedImage}
+  />
+
+   <!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
+
+<section id="cta-1072">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <h2 class="cs-title">KHTH is a safe place where children and families draw strength from each other.</h2>
+            </div>
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" src="/assets/images/our-programs.jpg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" src="/assets/images/our-programs.jpg">
+        <img loading="lazy" decoding="async" src="/assets/images/our-programs.jpg" alt="mechanic" width="1280" height="700">
+    </picture>
+</section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-280">
+    <div class="cs-container">
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" src="/assets/images/healing-young-hearts.jpg">
+                    <source media="(min-width: 601px)" src="/assets/images/healing-young-hearts.jpg">
+                    <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/healing-young-hearts.jpg" alt="living room" width="482" height="332">
+                </picture>
+                <h3 class="cs-h3">Healing Young Hearts</h3>
+                <p class="cs-card-text">
+                    School and community based loss and age-specific therapeutic peer support groups for healing grief and trauma.
+                </p>
+                <a href="/programs/healing-young-hearts/" class="cs-link">Read More
+                    <!-- SVG Arrow-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><g clip-path="url(#a)"><path d="M4.167 10.833h9.308L9.408 14.9a.84.84 0 0 0 0 1.183.83.83 0 0 0 1.175 0l5.492-5.491a.83.83 0 0 0 0-1.175l-5.483-5.5a.83.83 0 1 0-1.175 1.175l4.058 4.075H4.167a.836.836 0 0 0-.834.833c0 .458.375.833.834.833Z" fill="#1A1A1A"/></g><defs><clipPath id="a-280-280"><path fill="#fff" d="M0 0h20v20H0z"/></clipPath></defs></svg>
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                     <source media="(max-width: 600px)" src="/assets/images/mentoring-groups.jpg">
+                    <source media="(min-width: 601px)" src="/assets/images/mentoring-groups.jpg">
+                    <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/mentoring-groups.jpg" alt="living room" width="482" height="332">
+                </picture>
+                <h3 class="cs-h3">Mentoring Groups for Positive Development</h3>
+                <p class="cs-card-text">
+                    Community-based mentoring activities that build connections and strengthens families.
+                </p>
+                <a href="/programs/mentoring-groups/" class="cs-link">Read More
+                    <!-- SVG Arrow-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><g clip-path="url(#a)"><path d="M4.167 10.833h9.308L9.408 14.9a.84.84 0 0 0 0 1.183.83.83 0 0 0 1.175 0l5.492-5.491a.83.83 0 0 0 0-1.175l-5.483-5.5a.83.83 0 1 0-1.175 1.175l4.058 4.075H4.167a.836.836 0 0 0-.834.833c0 .458.375.833.834.833Z" fill="#1A1A1A"/></g><defs><clipPath id="a-280-280"><path fill="#fff" d="M0 0h20v20H0z"/></clipPath></defs></svg>
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                     <source media="(max-width: 600px)" src="/assets/images/Education-Training.jpg">
+                    <source media="(min-width: 601px)" src="/assets/images/Education-Training.jpg">
+                    <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/Education-Training.jpg" alt="living room" width="482" height="332">
+                </picture>
+                <h3 class="cs-h3">Education and Training</h3>
+                <p class="cs-card-text">
+                    Join the Healing Young Hearts team and become a facilitator. Training is required for all volunteers or facilitators and available to other organizations and schools.
+                </p>
+                <a href="/programs/education-and-training/" class="cs-link">Read More
+                    <!-- SVG Arrow-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><g clip-path="url(#a)"><path d="M4.167 10.833h9.308L9.408 14.9a.84.84 0 0 0 0 1.183.83.83 0 0 0 1.175 0l5.492-5.491a.83.83 0 0 0 0-1.175l-5.483-5.5a.83.83 0 1 0-1.175 1.175l4.058 4.075H4.167a.836.836 0 0 0-.834.833c0 .458.375.833.834.833Z" fill="#1A1A1A"/></g><defs><clipPath id="a-280-280"><path fill="#fff" d="M0 0h20v20H0z"/></clipPath></defs></svg>
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                     <source media="(max-width: 600px)" src="/assets/images/healing-young-hearts.jpg">
+                    <source media="(min-width: 601px)" src="/assets/images/healing-young-hearts.jpg">
+                    <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/healing-young-hearts.jpg" alt="living room" width="482" height="332">
+                </picture>
+                <h3 class="cs-h3">Crisis Intervention</h3>
+                <p class="cs-card-text">
+                    Crisis intervention after homicide, suicide, accidents, and disasters.
+                </p>
+                <a href="/programs/crisis-management/" class="cs-link">Read More
+                    <!-- SVG Arrow-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><g clip-path="url(#a)"><path d="M4.167 10.833h9.308L9.408 14.9a.84.84 0 0 0 0 1.183.83.83 0 0 0 1.175 0l5.492-5.491a.83.83 0 0 0 0-1.175l-5.483-5.5a.83.83 0 1 0-1.175 1.175l4.058 4.075H4.167a.836.836 0 0 0-.834.833c0 .458.375.833.834.833Z" fill="#1A1A1A"/></g><defs><clipPath id="a-280-280"><path fill="#fff" d="M0 0h20v20H0z"/></clipPath></defs></svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+  <CTA />
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE PROJECTS PAGE */
+
+  /*-- -------------------------- -->
+<---         Services           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #services-280 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            max-width: (1064/16rem);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: (16/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            max-width: (522/16rem);
+            /* 32px - 40px top & bottom */
+            /* 16px - 20px left & right */
+            padding: clamp(2rem, 4vw, 2.5rem) clamp(1rem, 3.4vw, 1.25rem);
+            border-radius: (8/16rem);
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #F8C27B;
+                .cs-picture {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+                .cs-link {
+                    color: var(--bodyTextColor);
+
+                    svg {
+                        path {
+                            fill: var(--bodyTextColor);
+                        }
+                    }
+                }
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            /* 228px - 332px */
+            height: clamp(14.25rem, 30.47vw, 20.75rem);
+            /* 28px - 32px */
+            margin-bottom: clamp(1.75rem, 3.5vw, 2rem);
+            display: block;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: transform 0.7s;
+            }
+        }
+
+        .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 2vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            /* 20px - 24px */
+            margin: 0 0 clamp(1.25rem, 2.5vw, 1.5rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-card-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            /* 16px - 20px */
+            margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-link {
+            font-size: (16/16rem);
+            /* ensures its always on 1 line */
+            white-space: nowrap;
+            line-height: 1.5em;
+            font-weight: 700;
+            width: (104/16rem);
+            text-decoration: none;
+            /* pushes up against the text so it's always at the bottom of the card */
+            margin-top: auto;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: color 0.3s;
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+
+            &:before {
+                /* top right box */
+                content: "";
+                width: 0%;
+                height: 2px;
+                /* current color value of parent */
+                background: currentColor;
+                opacity: 1;
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: 0;
+                transition: width 0.3s;
+            }
+
+            svg {
+                margin-left: (4/16rem);
+                /* changes color of arrow */
+                path {
+                    fill: var(--primary);
+                    transition: fill 0.3s;
+                }
+            }
+        }
+    }
+}
+
+/* Tablet - 700px */
+@media only screen and (min-width: 43.75rem) {
+    #services-280 {
+        .cs-card-group {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .cs-item {
+            width: 49.2%;
+            /* 560px - 690px */
+            min-height: clamp(35rem, 68vw, 43.125rem);
+            margin: 0;
+            box-sizing: border-box;
+
+            &:nth-of-type(2),
+            &:nth-of-type(4) {
+                transform: translateY(1.25rem);
+            }
+        }
+    }
+}
+ /*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cta-1072 {
+        padding: var(--sectionPadding);
+        background-color: var(--primary);
+        position: relative;
+        min-height: 65vh;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+             justify-content: center; /* Centers content vertically */
+    min-height: inherit; /* Inherits the height from parent */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-flex {
+            max-width: (930/16rem);
+        }
+
+        .cs-title {
+            margin: 0;
+
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* background color overlay */
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: #1a1a1a;
+                opacity: 0.40;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+                object-position: center 100%; /* First value: horizontal, Second value: vertical */
+            }
+        }
+    }
+}
+</style>

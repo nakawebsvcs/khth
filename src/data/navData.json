@@ -1,0 +1,76 @@
+[
+  {
+    "key": "Home",
+    "url": "/",
+    "children": []
+  },
+  {
+    "key": "About Us",
+    "url": "/about/",
+    "children": [
+      {
+        "key": "Our Team",
+        "url": "/about/our-team/"
+      },
+      {
+        "key": "Our Approach",
+        "url": "/about/our-approach"
+      },
+      {
+        "key": "Our Stories",
+        "url": "/about/our-stories/"
+      },
+      {
+        "key": "Our Donors and Partners",
+        "url": "/about/donors-partners/"
+      }
+    ]
+  },
+  {
+    "key": "Our Programs",
+    "url": "/programs/",
+    "children": [
+      {
+        "key": "Healing Young Hearts",
+        "url": "/programs/healing-young-hearts/"
+      },
+      {
+        "key": "Education & Training",
+        "url": "/programs/education-and-training/"
+      },
+      {
+        "key": "Mentoring Groups for Positive Development",
+        "url": "/programs/mentoring-groups/"
+      },
+      {
+        "key": "Crisis Management",
+        "url": "/programs/crisis-management/"
+      }
+    ]
+  },
+  {
+    "key": "Get Involved",
+    "url": "/get-involved/",
+    "children": [
+      {
+        "key": "Donate",
+        "url": "https://kidshurttoo.networkforgood.com/projects/183481-heart-of-gold",
+        "target": "_blank"
+      },
+      {
+        "key": "Volunteer",
+        "url": "/volunteer/"
+      },
+      {
+      "key": "Join our Mailing List",
+      "url": "https://kidshurttoo.dm.networkforgood.com/forms/join-our-mailing-list",
+      "target": "_blank"
+    }
+    ]
+  },
+  {
+    "key": "Recent News",
+    "url": "/updates/",
+    "children": []
+  }
+]
