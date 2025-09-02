@@ -1,10 +1,5 @@
 [
   {
-    "key": "Home",
-    "url": "/",
-    "children": []
-  },
-  {
     "key": "About Us",
     "url": "/about/",
     "children": [

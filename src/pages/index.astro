@@ -53,15 +53,15 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <picture class="cs-background">
       <source
         media="(max-width: 600px)"
-        srcset="/assets/images/img-placeholder.png"
+        srcset="/assets/images/home-photo.png"
       />
       <source
         media="(min-width: 601px)"
-        srcset="/assets/images/img-placeholder.png"
+        srcset="/assets/images/home-photo.png"
       />
       <img
         decoding="async"
-        src="/assets/images/img-placeholder.png"
+        src="/assets/images/home-photo.png"
         alt="abstract background"
         width="2250"
         height="1500"
@@ -300,7 +300,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         content: "";
         width: 100%;
         height: 100%;
-        background: #7054fc65;
+        background: #7054fc9c;
         opacity: 0.9;
         position: absolute;
         display: block;
@@ -353,7 +353,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
         text-align: inherit;
         max-width: 20ch;
         margin: 0 0 (16/16rem) 0;
-        color: var(--headerColor);
+        color: #FAD115;
+        text-shadow:#1a1a1a;
         position: relative;
       }
 
@@ -365,7 +366,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         width: 100%;
         /* 32px - 40px */
         margin: 0 0 clamp(2rem, 4vw, 2.5rem) 0;
-        color: #000000;
+        color: #fff;
       }
 
       .cs-button-solid {
@@ -418,13 +419,11 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
         img {
           position: absolute;
-          top: 0;
+          top: 10%;
           left: 0;
           height: 100%;
           width: 100%;
           object-fit: cover;
-          /* makes the top of the image start at the top of the parent */
-          object-position: top;
         }
       }
 
@@ -448,7 +447,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       &:before {
         background: linear-gradient(
           89deg,
-          #7054fc65 44.46%,
+          #8455a2c3 44.46%,
           rgba(255, 243, 236, 0) 78.47%
         );
         opacity: 1;
@@ -488,7 +487,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   @media only screen and (min-width: 100rem) {
     #hero-1469 {
       .cs-background {
-        background: url("/assets/images/img-placeholder.png");
+        background: url("/assets/images/home-photo.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -511,8 +510,16 @@ const optimizedImage = await getOptimizedImage(landingImage)
         top: (210/16rem);
         bottom: auto;
       }
+
+      .cs-background {
+      background-position: center 35%;
+
+      img {
+        object-position: center 35%;
+      }
     }
   }
+}
 
   /*-- -------------------------- -->
 <---          Content           -->

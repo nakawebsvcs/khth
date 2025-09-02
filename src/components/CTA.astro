@@ -16,11 +16,12 @@ import CSPicture from "@components/TemplateComponents/CSPicture.astro";
     </p>
   </div>
   <CSPicture
-    mobileImgUrl="/assets/images/img-placeholder.png"
+    class="quote-photo"
+    mobileImgUrl="/assets/images/quote-photo.png"
     mobileMediaWidth="600px"
-    desktopImgUrl="/assets/images/img-placeholder.png"
+    desktopImgUrl="/assets/images/quote-photo.png"
     desktopMediaWidth="601px"
-    fallbackImgUrl="/assets/images/img-placeholder.png"
+    fallbackImgUrl="/assets/images/quote-photo.png"
     alt=""
   />
 </section>
@@ -36,7 +37,7 @@ import CSPicture from "@components/TemplateComponents/CSPicture.astro";
         content: "";
         width: 100%;
         height: 100%;
-        background: #000;
+        background: #3b3b3bca;
         opacity: 0.7;
         display: block;
         position: absolute;
@@ -67,6 +68,7 @@ import CSPicture from "@components/TemplateComponents/CSPicture.astro";
   @media only screen and (min-width: 64em) {
     #cta {
       padding: (168/16rem) 0;
+
     }
   }
 
@@ -101,3 +103,9 @@ import CSPicture from "@components/TemplateComponents/CSPicture.astro";
     }
   }
 </style>
+
+
+
+
+
+

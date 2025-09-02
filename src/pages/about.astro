@@ -35,10 +35,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
     </div>
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" src="/assets/images/img-placeholder.png">
+        <source media="(max-width: 600px)" src="/assets/images/about-photo.png">
         <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" src="/assets/images/img-placeholder.png">
-        <img loading="lazy" decoding="async" src="/assets/images/img-placeholder.png" alt="mechanic" width="1280" height="700">
+        <source media="(min-width: 601px)" src="/assets/images/about-photo.png">
+        <img loading="lazy" decoding="async" src="/assets/images/about-photo.png" alt="mechanic" width="1280" height="700">
     </picture>
 </section>
  
@@ -141,10 +141,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
     </div>
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="/assets/images/img-placeholder.png">
+        <source media="(max-width: 600px)" srcset="/assets/images/about-photo.png">
         <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="/assets/images/img-placeholder.png">
-        <img loading="lazy" decoding="async" src="/assets/images/img-placeholder.png" alt="lobby" width="1400" height="730">
+        <source media="(min-width: 601px)" srcset="/assets/images/about-photo.png">
+        <img loading="lazy" decoding="async" src="/assets/images/about-photo.png" alt="lobby" width="1400" height="730">
     </picture>
 </section>
   <CTA />
@@ -216,8 +216,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 display: block;
                 height: 100%;
                 width: 100%;
-                background: #1a1a1a;
-                opacity: 0.40;
+                background: #101010;
+                opacity: 0.50;
                 top: 0;
                 left: 0;
                 z-index: 1;
@@ -231,11 +231,41 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 width: 100%;
                 /* Makes img tag act as a background image */
                 object-fit: cover;
-                object-position: center 100%; /* First value: horizontal, Second value: vertical */
+                object-position: center 54%; /* First value: horizontal, Second value: vertical */
+
             }
         }
     }
 }
+
+    /* Mobile - up to 768px */
+@media only screen and (max-width: 768px) {
+    #cta-1072 .cs-background img {
+        object-position: 30% 54%;
+    }
+}
+
+/* Tablet - 769px to 1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #cta-1072 .cs-background img {
+        object-position: center 70%;
+    }
+}
+
+/* Desktop - 1025px and above */
+@media only screen and (min-width: 1025px) {
+    #cta-1072 .cs-background img {
+        object-position: center 54%;
+    }
+}
+
+/* Large Desktop - 1441px and above */
+@media only screen and (min-width: 1441px) {
+    #cta-1072 .cs-background img {
+        object-position: center 40%;
+    }
+}
+
 
  /*-- -------------------------- -->
 <---           Steps            -->
@@ -488,6 +518,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 @media only screen and (min-width: 0rem) {
     #locations-1845 {
         padding: var(--sectionPadding);
+        margin-bottom: 7rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
