@@ -38,7 +38,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <source media="(max-width: 600px)" src="/assets/images/about-photo.png">
         <!--Tablet and above Image-->
         <source media="(min-width: 601px)" src="/assets/images/about-photo.png">
-        <img loading="lazy" decoding="async" src="/assets/images/about-photo.png" alt="mechanic" width="1280" height="700">
+        <img loading="lazy" decoding="async" src="/assets/images/about-photo.png" alt="about KHTH" width="1280" height="700">
     </picture>
 </section>
  
@@ -115,12 +115,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!-- ============================================ -->
 <!--                  Locations                   -->
 <!-- ============================================ -->
-<h1 class="cs-h1" style="margin-bottom: 3rem; text-align: center;">Locations</h1>
+<h1 class="cs-h1">Locations</h1>
 <section id="locations-1845">
     <div class="cs-container">
         <ul class="cs-card-group">
             <li class="cs-item">
-               <span style="font-size: 2rem; color: white;">⟟</span>
+               <span class="pin-icon">⟟</span>
                 <h3 class="cs-h3">
                     Honolulu
                 </h3>
@@ -129,7 +129,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 </p>
             </li>
             <li class="cs-item">
-                <span style="font-size: 2rem; color: white;">⟟</span>
+                <span class="pin-icon">⟟</span>
                 <h3 class="cs-h3">
                     Maui
                 </h3>
@@ -141,10 +141,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
     </div>
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="/assets/images/about-photo.png">
+        <source media="(max-width: 600px)" srcset="/assets/images/locations-photo.png">
         <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="/assets/images/about-photo.png">
-        <img loading="lazy" decoding="async" src="/assets/images/about-photo.png" alt="lobby" width="1400" height="730">
+        <source media="(min-width: 601px)" srcset="/assets/images/locations-photo.png">
+        <img loading="lazy" decoding="async" src="/assets/images/locations-photo.png" alt="locations" width="1400" height="730">
     </picture>
 </section>
   <CTA />
@@ -434,7 +434,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             line-height: 1.2em;
             text-align: inherit;
             margin: 0;
-            color: var(--headerColor);
+            color: var(--primary);
             position: relative;
         }
         .cs-big-link {
@@ -514,6 +514,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
 <---         Locations          -->
 <--- -------------------------- -*/
 
+ .cs-h1 {
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #locations-1845 {
@@ -561,21 +567,30 @@ const optimizedImage = await getOptimizedImage(landingImage)
             gap: (18/16rem);
             transition: background-color .3s;
 
+            .pin-icon {
+            font-size: 2rem;
+            color: white;
+        }
+
             &:hover {
                 background-color: #f8c27b;
                 cursor: pointer;
 
                 .cs-h3 {
-                    color: var(--bodyTextColorWhite);
+                    color: var(--primary);
                 }
 
+                 .pin-icon {
+                    color: var(--primary);
+                 }
+
                 .cs-item-text {
-                    color: var(--bodyTextColorWhite);
+                    color: var(--primary);
                     opacity: 0.9;
                 }
             }
         }
-
+        
         .cs-h3 {
             /* 20px - 25px */
             font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
