@@ -112,8 +112,6 @@ import { Icon } from 'astro-icon/components';
   }
 
   #cs-navigation {
-    /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-    font-family: "Roboto", "Arial", sans-serif;
     width: 100%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
@@ -205,6 +203,10 @@ import { Icon } from 'astro-icon/components';
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    .cs-li-link {
+      padding-right: 2rem;
     }
 
     .cs-active {
