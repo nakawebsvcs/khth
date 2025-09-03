@@ -45,7 +45,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
         <div class="cs-content">
             <h2 class="cs-title">Become a Volunteer Facilitator</h2>
-            <span class="cs-topper">Locally founded, our Hawaii-based program offers peer support groups and mentoring programs designed especially for youth affected by grief and trauma. To become a volunteer facilitator, please contact Kids Hurt Too Hawaii (KHTH) at 808-545-5683.</span>
+            <span class="cs-topper">Locally founded, our Hawai'i-based program offers peer support groups and mentoring programs designed especially for youth affected by grief and trauma. To become a volunteer facilitator, please contact Kids Hurt Too Hawaii (KHTH) at 808-545-5683.</span>
         </div>
         <!--
             We had to use a div here because of the grouping we had to do to make the staggerd design work. We needed to create two groups, one with 3 cards and one with 2 cards so we can arrange the cards separately to create the design we need to create. 
@@ -124,8 +124,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <section class="training-info">
     <div class="container">
       <h2>Training Information</h2>
-      <p>Anyone can access our training without the one-year volunteering commitment. Please contact us to learn more about this arrangement and what we charge for the training. For those who volunteer in our peer-support groups, training is offered at a reduced cost.</p><br>
-      <p>Dates for training events are to be determined (TBD) and set after a minimum number of people have registered. Most courses are provided on weekends or evenings unless we are contracted to provide training to groups by request.</p>
+      <p class="cs-content">Anyone can access our training without the one-year volunteering commitment. Please contact us to learn more about this arrangement and what we charge for the training. For those who volunteer in our peer-support groups, training is offered at a reduced cost.</p><br>
+      <p class="cs-content">Dates for training events are to be determined and are set after a minimum number of people have registered. Most courses are provided on weekends or evenings unless we are contracted to provide training to groups by request.</p>
     </div>
   </section>
 
@@ -146,6 +146,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .cs-content {
+    font-size: 1.5rem;
   }
 
   section {
@@ -227,7 +231,11 @@ const optimizedImage = await getOptimizedImage(landingImage)
         }
 
         .cs-topper {
-            color: #767676;
+            text-transform: none;
+            color: #242424;
+            padding-top: 2rem;
+            width: 90%;
+            font-size: 1.5rem;
         }
 
         .cs-title {
@@ -375,7 +383,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         }
 
         .cs-item-text {
-            font-size: (14/16rem);
+            font-size: (15/16rem);
             line-height: 1.5em;
             max-width: (450/16rem);
             margin: 0;

@@ -21,7 +21,7 @@
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
     --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --bodyFontSize: 1rem;
+    --bodyFontSize: 1.5rem;
 
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
@@ -73,7 +73,7 @@
     padding: 0 (30/16rem);
 
     // Transition Properties
-    color: #dddddd;
+    color: #FAD115;
     background-color: var(--primary);
     display: inline-block;
     position: relative;
@@ -111,46 +111,46 @@
 @media only screen and (min-width: 0em) {
   // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
 
-  /* roboto-regular - latin */
+  /* genty-regular - latin */
   @font-face {
     font-style: normal;
-    font-family: "Roboto";
+    font-family: "Genty Sans";
     font-weight: 400;
     font-display: swap;
     src:
       local(""),
-      url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"),
+      url("/assets/fonts/genty-sans-regular.woff2") format("woff2"),
       /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url("/assets/fonts/genty-sans-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-  /* roboto-700 - latin */
+  /* genty-700 - latin */
   @font-face {
     font-style: normal;
-    font-family: "Roboto";
+    font-family: "Genty Sans";
     font-weight: 700;
     font-display: swap;
     src:
       local(""),
-      url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"),
+      url("/assets/fonts/genty-sans-regular.woff2") format("woff2"),
       /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url("/assets/fonts/genty-sans-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-  /* roboto-900 - latin */
+  /* genty-900 - latin */
   @font-face {
     font-style: normal;
-    font-family: "Roboto";
+    font-family: "Genty Sans";
     font-weight: 900;
     font-display: swap;
     src:
       local(""),
-      url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"),
+      url("/assets/fonts/genty-sans-regular.woff2") format("woff2"),
       /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url("/assets/fonts/genty-sans-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
   body,
   html {
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: "Raleway", Arial, sans-serif;
     font-size: 100%;
     margin: 0;
     padding: 0;
@@ -182,6 +182,7 @@
   h4,
   h5,
   h6 {
+    font-family: "Genty Sans", Arial, sans-serif;
     margin: 0;
     color: var(--headerColor);
   }
@@ -189,6 +190,7 @@
   p,
   li,
   a {
+    font-family: "Raleway", Arial, sans-serif;
     font-size: (16/16rem);
     line-height: 1.5em;
     margin: 0;
