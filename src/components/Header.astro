@@ -91,9 +91,9 @@ import { Icon } from 'astro-icon/components';
       </li>
     ))}
   </ul>
+   <a href="/contact" class="cs-button-solid cs-nav-button">Contact Us</a>
 </div>
     </nav>
-     <a href="/contact" class="cs-button-solid cs-nav-button">Contact Us</a>
   </div>
 </header>
 
@@ -149,7 +149,21 @@ import { Icon } from 'astro-icon/components';
         visibility: visible;
         transform: scaleX(1);
         transition-delay: 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: 1rem;
+        box-sizing: border-box;
       }
+
+      .cs-ul {
+      width: 100%;
+      height: auto;
+      max-height: calc(100vh - 100px); // Adjust based on your header height
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
 
       .cs-li {
         opacity: 1;
@@ -188,8 +202,15 @@ import { Icon } from 'astro-icon/components';
         margin: 0;
         white-space: nowrap;
         color: var(--primary);
-        font-size: clamp(1rem, 1.5vw, 1.5rem);
+        font-size: clamp(1.5rem, 1.5vw, 1.5rem);
       }
+    }
+
+    .cs-nav-button {
+      width: 50%;
+      margin-top: 1rem;
+      text-align: center;
+      order: 1;
     }
 
     .cs-toggle {
@@ -206,7 +227,8 @@ import { Icon } from 'astro-icon/components';
     }
 
     .cs-li-link {
-      padding-right: 2rem;
+      font-size: clamp(1.5rem, 2vw, 2rem) !important;
+      padding: 1rem 2rem 1rem;
     }
 
     .cs-active {
@@ -333,6 +355,10 @@ import { Icon } from 'astro-icon/components';
       transform-origin: top right;
     }
 
+    .cs-nav-button {
+      display: inline-block;
+    }
+
     .cs-ul {
       width: auto;
       min-width: 40%;
@@ -427,6 +453,109 @@ import { Icon } from 'astro-icon/components';
     align-items: center; /* Vertically centers the text */
     justify-content: center; /* Horizontally centers the text */
 }
+  }
+}
+
+/* Desktop - 1024px and above */
+@media only screen and (min-width: 64rem) {
+  #cs-navigation {
+    .cs-ul-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+      transform: none;
+      overflow: visible;
+      transition: none;
+    }
+
+    .cs-ul {
+      width: auto;
+      min-width: 0;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1.5rem;
+      overflow: visible;
+    }
+
+    .cs-li {
+      width: auto;
+      opacity: 1;
+      transform: none;
+      text-align: left;
+      margin-right: 0;
+      transition: none;
+    }
+
+    .cs-li-link {
+      font-size: 1rem !important;
+      padding: 0;
+    }
+
+    .cs-nav-button {
+      width: auto;
+      margin-top: 0;
+      margin-left: 1.5rem;
+      order: 0;
+    }
+
+    .cs-button-solid {
+      margin-left: 2rem;
+      padding: 0.8rem 1.5rem; 
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 12rem; 
+      min-width: 8rem; 
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem; 
+    }
+
+    .cs-toggle {
+      display: none;
+    }
+  }
+}
+
+/* Extra Large Desktop - 1900px and above */
+@media only screen and (min-width: 118.75rem) {
+  #cs-navigation {
+    .cs-container {
+      max-width: 1880px;
+      padding: 0 5rem; 
+      justify-content: space-between !important;
+    }
+
+    .cs-logo {
+      max-width: 18%; 
+      margin-right: 20% !important;
+    }
+
+    .cs-ul {
+      gap: clamp(3rem, 5vw, 5rem);
+    }
+
+    .cs-button-solid {
+      margin-left: 4rem; 
+      padding: 1.2rem 2.5rem; 
+      min-width: 14rem; 
+      max-width: 18rem; 
+    }
   }
 }
 
