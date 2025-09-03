@@ -11,23 +11,485 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
 <BaseLayout
   title="Education and Training"
-  description="Meta description for the page"
+  description="Training programs for adults to support children and teens with grief and trauma."
   preloadedImage = {optimizedImage}
 >
-  <!-- ============================================ -->
-  <!--                    LANDING                   -->
-  <!-- ============================================ -->
-
   <Landing 
     title="Education and Training"
     image={optimizedImage}
   />
 
+ <section id="page-description">
+    <div class="container">
+      <h2 class="page-description">Children and teens with grief and trauma need adults to provide safe spaces, care, and support.</h2>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <h2>Training for Compassionate Support</h2>
+      <p class="cs-content">Often there is too little understanding and up-to-date information about grief and trauma in young children and teens. Kids Hurt Too Hawaii has provided training to more than 9,500 people since its inception. We have offered this kind of support to not only our volunteer facilitators, but to other nonprofit organizations, schools, and counselors. We can offer CEU's for licensed social workers.</p>
+      <p class="cs-content">Training programs develop the knowledge base and practical tools for the best possible care when engaging children impacted by loss and trauma.</p>
+      <p class="cs-content">The training content and process are created and provided by Cynthia White, M.A.E., a co-founder and the current Training Director of Kids Hurt Too Hawai'i. She has 42 years of experience.</p>
+      <div class="cta-buttons">
+        <a href="#" class="cs-button-solid">I Want to Help</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+<!--                    Steps                     -->
+<!-- ============================================ -->
+
+<section id="steps-1376">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Become a Volunteer Facilitator</h2>
+            <span class="cs-topper">Locally founded, our Hawaii-based program offers peer support groups and mentoring programs designed especially for youth affected by grief and trauma. To become a volunteer facilitator, please contact Kids Hurt Too Hawaii (KHTH) at 808-545-5683.</span>
+        </div>
+        <!--
+            We had to use a div here because of the grouping we had to do to make the staggerd design work. We needed to create two groups, one with 3 cards and one with 2 cards so we can arrange the cards separately to create the design we need to create. 
+        -->
+        <div class="cs-card-group">
+            <div class="cs-group1">
+                <div class="cs-item">
+                    <picture class="cs-picture">
+                        <img class="cs-icon" loading="lazy" decoding="async"
+                            src="/assets/images/heart.svg" alt="heart-icon"
+                            width="48" height="48"/>
+                    </picture>
+                    <!-- <h3 class="cs-h3">Discovery</h3> -->
+                    <p class="cs-item-text">
+                        One-year commitment that may involve as little as 4 hours a month once the training is completed
+                    </p>
+                </div>
+                <div class="cs-item">
+                    <picture class="cs-picture">
+                        <img class="cs-icon" loading="lazy" decoding="async"
+                            src="/assets/images/heart.svg" alt="heart-icon"
+                            width="48" height="48"/>
+                    </picture>
+                    <!-- <h3 class="cs-h3">Discovery</h3> -->
+                    <p class="cs-item-text">
+                        Must be at least 16 years old
+                    </p>
+                </div>
+                <div class="cs-item">
+                    <picture class="cs-picture">
+                        <img class="cs-icon" loading="lazy" decoding="async"
+                            src="/assets/images/heart.svg" alt="heart-icon"
+                            width="48" height="48"/>
+                    </picture>
+                    <!-- <h3 class="cs-h3">Discovery</h3> -->
+                    <p class="cs-item-text">
+                        Screening process for all volunteers (acceptance not guaranteed)
+                    </p>
+                </div>
+            </div>
+            <div class="cs-group2">
+                <div class="cs-item">
+                   <picture class="cs-picture">
+                        <img class="cs-icon" loading="lazy" decoding="async"
+                            src="/assets/images/heart.svg" alt="heart-icon"
+                            width="48" height="48"/>
+                    </picture>
+                    <!-- <h3 class="cs-h3">Discovery</h3> -->
+                    <p class="cs-item-text">
+                        Mentoring orientation required before taking part in any mentoring programs
+                    </p>
+                </div>
+                <div class="cs-item">
+                    <picture class="cs-picture">
+                        <img class="cs-icon" loading="lazy" decoding="async"
+                            src="/assets/images/heart.svg" alt="heart-icon"
+                            width="48" height="48"/>
+                    </picture>
+                    <!-- <h3 class="cs-h3">Discovery</h3> -->
+                    <p class="cs-item-text">
+                        Children and teens are always engaged in a group with other children
+                    </p>
+                </div>
+            </div>
+            <picture class="cs-waves">
+                <!--Mobile Image-->
+                <source media="(max-width: 1023px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/wave-tablet.svg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 1024px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/wave-desktop.svg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/wave-desktop.svg" alt="wave" width="1280" height="568">
+            </picture>
+        </div>
+    </div>
+</section>
+
+  <section class="training-info">
+    <div class="container">
+      <h2>Training Information</h2>
+      <p>Anyone can access our training without the one-year volunteering commitment. Please contact us to learn more about this arrangement and what we charge for the training. For those who volunteer in our peer-support groups, training is offered at a reduced cost.</p><br>
+      <p>Dates for training events are to be determined (TBD) and set after a minimum number of people have registered. Most courses are provided on weekends or evenings unless we are contracted to provide training to groups by request.</p>
+    </div>
+  </section>
+
   <CTA />
 </BaseLayout>
 
 <style lang="less">
-  /* PAGE-SPECIFIC STYLES FOR THE PROJECTS PAGE */
+  /* PAGE-SPECIFIC STYLES */
 
- 
+  #page-description {
+    .page-description {
+      font-style: italic;
+      text-align: center;
+    }
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+  }
+
+  .intro, .volunteer-info, .training-info, .training-director {
+    background-color: #fff;
+  }
+
+  .cs-content {
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+
+      &:before {
+        content: "•";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  .cta-buttons {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .cs-button-solid {
+    text-align: center;
+  }
+
+  /*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-1376 {
+        padding: var(--sectionPadding);
+        background-color: #f7f7f7;
+        /* clips the waves and lines from cause overflow issues */
+        overflow: hidden;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1440/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-topper {
+            color: #767676;
+        }
+
+        .cs-title {
+            max-width: 25ch;
+            margin: 0;
+        }
+
+        .cs-group1,
+        .cs-group2 {
+            /* the contents of this div are no longer its children. This div acts as if it doesn't exist and their content is now children of the next level parent, in this case, the cs-card-group. That way they can all be arranged together as children under 1 parent div instead of children in two different parent divs */
+            display: contents;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* 16px - 20px */
+            gap: clamp(1rem, 2.3vw, 1.25rem);
+            position: relative;
+        }
+
+        /* setting the row groups to display: contents causes the child cs-items to "appear" as direct children of the parent .cs-card-group */
+        /* therefore, we can set the order of the .cs-items between rows, changing it between mobile and desktop */
+        .cs-group1 {
+            display: contents;
+
+            .cs-item:nth-of-type(1) {
+                order: 1;
+            }
+
+            .cs-item:nth-of-type(2) {
+                order: 3;
+            }
+
+            .cs-item:nth-of-type(3) {
+                order: 5;
+            }
+        }
+
+        .cs-group2 {
+            display: contents;
+
+            .cs-item:nth-of-type(1) {
+                order: 2;
+            }
+
+            .cs-item:nth-of-type(2) {
+                order: 4;
+            }
+        }
+
+        .cs-item {
+            text-align: center;
+            list-style: none;
+            width: 100%;
+            max-width: (240/16rem);
+            height: (240/16rem);
+            margin: 0;
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            padding: (24/16rem);
+            background-color: #f4f4f4;
+            /* clips the :before element from being clickable when it's outside the item and triggering the hover animation */
+            overflow: hidden;
+            border: 1px solid #e8e8e8;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.3s, border-color 0.3s;
+
+            &:before {
+                content: "";
+                width: (148/16rem);
+                height: (148/16rem);
+                background: #fff;
+                opacity: 0;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: (-116/16rem);
+                transform: translateY(6.25rem);
+                transition: left 0.3s, transform 0.3s, opacity 0.3s;
+            }
+
+            &:hover {
+                background-color: var(--primary);
+                border-color: var(--primary);
+
+                &:before {
+                    opacity: 0.2;
+                    left: (-16/16rem);
+                    transform: translateY(0);
+                }
+
+                .cs-icon {
+                    filter: grayscale(1) brightness(1000%);
+                }
+
+                .cs-h3,
+                .cs-item-text {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-text {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .cs-picture {
+            width: (100/16rem);
+            height: auto;
+            margin: 0 0 (8/16rem) 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-icon {
+            width: (32/16rem);
+            height: auto;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            font-weight: bold;
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+            transition: color 0.3s;
+            transition: color 0.3s;
+        }
+
+        .cs-item-text {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            max-width: (450/16rem);
+            margin: 0;
+            padding: 0;
+            color: var(--bodyTextColor);
+            transition: color 0.3s, opacity 0.3s;
+        }
+
+        .cs-waves {
+            display: none;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-1376 {
+        .cs-card-group {
+            justify-content: center;
+            align-items: center;
+            gap: (40/16rem);
+        }
+
+        .cs-group1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: (48/16rem);
+        }
+
+        .cs-group2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: (48/16rem);
+        }
+
+        .cs-item {
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-waves {
+            width: (71/16rem);
+            height: auto;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #steps-1376 {
+        .cs-card-group {
+            flex-direction: column;
+        }
+
+        .cs-group1 {
+            width: 100%;
+            /* -8px to -30px, we put the clamp in a calc function to turn it into a negative number and pull down to cause the overlapping effect */
+            margin-bottom: ~"calc(clamp(.5rem, 2vw, 1.875rem)*-1)";
+            flex-direction: row;
+        }
+
+        .cs-group2 {
+            width: 100%;
+            /* -8px to -30px */
+            margin-top: ~"calc(clamp(.5rem, 2vw, 1.875rem)*-1)";
+            flex-direction: row;
+        }
+
+        .cs-waves {
+            width: 110vw;
+            max-width: (1920/16rem);
+            height: auto;
+
+            &:before {
+                /* left continuation line */
+                content: "";
+                width: 50vw;
+                height: 4px;
+                background: #e8e8e8;
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: (84/16rem);
+                right: 100%;
+            }
+
+            &:after {
+                /* Right continuation line */
+                content: "";
+                width: 50vw;
+                height: 4px;
+                background: #e8e8e8;
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: (84/16rem);
+                left: 100%;
+            }
+        }
+    }
+}
+                                
 </style>

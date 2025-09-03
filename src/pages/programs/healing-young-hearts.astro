@@ -10,24 +10,342 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
 <BaseLayout
   title="Healing Young Hearts"
-  description="Meta description for the page"
+  description="Loss and age-specific therapeutic peer-support groups for children impacted by grief and trauma."
   preloadedImage = {optimizedImage}
 >
-  <!-- ============================================ -->
-  <!--                    LANDING                   -->
-  <!-- ============================================ -->
-
   <Landing 
     title="Healing Young Hearts"
     image={optimizedImage}
   />
 
- 
+  <section id="page-description">
+  <div class="container">
+    <h2 class="page-description">Loss and age-specific therapeutic peer-support groups for children impacted by grief and trauma.</h2>
+    </div>
+    </section>
+
+<section class="intro">
+  <div class="container">
+    <h2>A Message from Our Children</h2>
+    <div class="video-container">
+      <iframe 
+        width="580" 
+        height="326" 
+        src="https://www.youtube.com/embed/LM6lQ70GZ0Q" 
+        title="Kids Hurt Too Hawaii: Kids Talk" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+  <section class="peer-support">
+    <div class="container">
+      <h2>Peer Support Groups where no child hurts alone</h2>
+      <p class="cs-content">KHTH provides community and school based therapeutic peer support groups for children impacted by grief and trauma.</p>
+      <div class="support-types">
+        <div class="support-type">
+          <h3>School-based groups</h3>
+          <p>Follow a nine session curriculum and is offered twice a school year.</p>
+        </div>
+        <div class="support-type">
+          <h3>Community-based groups</h3>
+          <p>Are ongoing and open-ended so families can participate all year long.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+<!--                   Process                    -->
+<!-- ============================================ -->
+
+<section id="process-687">
+    <div class="cs-container">
+        <div class="cs-content">
+            <!-- <span class="cs-topper">Our Work Process</span> -->
+            <h2 class="cs-title">Our Approach</h2>
+            <!-- <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam earum rerum sunt officia quas adipisci. Nulla, dolor dignissimos qui laboriosam, asperiores aliquam soluta voluptatum, dolorem dolores minima delectus quas nam?
+            </p> -->
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/heart.svg" alt="heart icon" width="42" height="42">
+                </picture>
+                <h3 class="cs-h3">All services use the Family Strengthening Model.</h3>
+                <!-- <p class="cs-item-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa, atque ad deleniti earum esse.</p> -->
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/heart.svg" alt="heart icon" width="42" height="42">
+                </picture>
+                <h3 class="cs-h3">Peer groups are child-directed and family-centered.</h3>
+                <!-- <p class="cs-item-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa, atque ad deleniti earum esse.</p> -->
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/heart.svg" alt="heart icon" width="32" height="42">
+                </picture>
+                <h3 class="cs-h3">Volunteers are trained and supervised by professional staff.</h3>
+                <!-- <p class="cs-item-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa, atque ad deleniti earum esse.</p> -->
+            </li>
+        </ul>
+    </div>
+    <!--SVG Waves-->
+    <img class="cs-background" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fripples.svg" aria-hidden="true" alt="svg waves" width="1280" height="568">
+</section>
+                                
+
+  <section class="group-structure">
+    <div class="container">
+      <h2>Peer Support Group Structure</h2>
+      <div class="structure-steps">
+        <div class="step">
+          <h3>Opening Circle</h3>
+          <p>Groups begin with a sharing circle. No one is forced to talk. There is an "I Pass" rule.</p>
+        </div>
+        <div class="step">
+          <h3>Play Time</h3>
+          <p>KHTH recognizes that children's primary way of communicating is not talking. It is behavior that includes playing and interactions with others. After Opening Circle, children and teens can choose what they want to do from various play activities. Children process their grief and trauma through play. There is a "Volcano Room" with large plush stuffed animals and a six-foot-tall wrestling doll.</p>
+        </div>
+        <div class="step">
+          <h3>Closing Circle</h3>
+          <p>Groups end with another sharing circle.</p>
+        </div>
+      </div>
+      <p class="cs-enroll">To learn more or enroll in services send an email to <a href="mailto:hiro@kidshurttoo.org">hiro@kidshurttoo.org</a> or call our office at <a href="tel:808-545-5683">808-545-5683</a>.</p>
+    </div>
+  </section>
+
+  <section class="contact-info">
+    <div class="container">
+      <h2>Get Involved: Become a Peer Support Volunteer</h2>
+      <div class="cta-buttons">
+        <a href="#" class="cs-button-solid">I Want to Help</a>
+      </div>
+    </div>
+  </section>
+
   <CTA />
 </BaseLayout>
 
 <style lang="less">
-  /* PAGE-SPECIFIC STYLES FOR THE PROJECTS PAGE */
+  /* PAGE-SPECIFIC STYLES */
 
- 
+  #page-description {
+
+    .page-description {
+      font-style: italic;
+      text-align: center;
+    }
+
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+  }
+
+  .intro, .peer-support, .approach, .group-structure, .contact-info {
+    background-color: #fff;
+  }
+
+  .cs-content {
+    margin-bottom: 3rem;
+  }
+
+  .cs-enroll {
+    margin-top: 3rem;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .support-types, .structure-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .support-type, .step {
+    background-color: var(--secondaryLight);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+
+      &:before {
+        content: "•";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+.cs-button-solid {
+  text-align: center;
+}
+
+/*-- -------------------------- -->
+<---          Process           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #process-687 {
+        padding: var(--sectionPadding);
+        /* Centers button */
+        text-align: center;
+        background-color: var(--primary);
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title, .cs-text {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-text {
+            opacity: .8;
+        }
+
+        .cs-card-group {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            column-gap: (20/16rem);
+            row-gap: (40/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            max-width: (413/16rem);
+        }
+
+        .cs-picture {
+            width: (100/16rem);
+            height: (100/16rem);
+            margin: auto;
+            margin-bottom: (24/16rem);
+            border-radius: 50%;
+            background-color: #fdfaf8;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-icon {
+            width: auto;
+            height: (38/16rem);
+            display: block;
+        }
+
+        .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 3vw, 1.5625rem);
+            font-weight: 700;
+            margin: 0;
+            margin-bottom: (12/16rem);
+            color: #fff;
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0.02;
+            /* Makes img tag act as a background image */
+            object-fit: cover;
+            z-index: -1;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #process-687 {
+        .cs-card-group {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+                                
 </style>
