@@ -25,7 +25,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
   <section id="page-description">
     <div class="container">
-      <h2 class="page-description">Mentoring brings children together with others in the community, growing their network of support and enlarging their 'ohana.</h2>
+      <h2 class="page-description">Mentoring brings children together with others in the community, growing their network of support and enlarging their ʻohana.</h2>
     </div>
   </section>
 
@@ -47,7 +47,7 @@ There are four mentoring groups:
         </div>                  
         <ul class="cs-card-group">
             <li class="cs-item">
-                <a href="" class="cs-link">
+                <div class="cs-link">
                     <picture class="cs-picture" id="pic-1">
                         <!--Mobile Image-->
                         <source media="(max-width: 600px)" srcset="/assets/images/surf-for-the-soul.jpg">
@@ -59,14 +59,14 @@ There are four mentoring groups:
                     <p class="cs-item-text">
                         Children learn to surf big and small waves. The challenges of surfing are mirrored in adaptations to loss and healing of trauma. Sometimes waves are big and difficult, knocking us off balance. Other times waves are small and manageable. Surfing teaches youth to never give up, regardless of the size of the wave. 
                     </p>
-                    <span class="cs-fake-link">
+                    <!-- <span class="cs-fake-link">
                         Get Started
                         <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-                    </span>
-                </a>
+                    </span> -->
+                </div>
             </li>
             <li class="cs-item">
-                <a href="" class="cs-link">
+                <div class="cs-link">
                     <picture class="cs-picture" id="pic-2">
                         <!--Mobile Image-->
                         <source media="(max-width: 600px)" srcset="/assets/images/poi-for-the-soul.jpg">
@@ -78,14 +78,14 @@ There are four mentoring groups:
                     <p class="cs-item-text">
                         Based on the Hawaiian culture of growing taro to make poi, children learn about reciprocal relationships. Taro is seen as a brother of the Hawaiian people. Hawaiians teach that when you take care of taro, taro takes care of you because it is a perfect food for the body’s health. Reciprocal relationships are the perfect food for the soul.
                     </p>
-                    <span class="cs-fake-link">
+                    <!-- <span class="cs-fake-link">
                         Get Started
                         <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-                    </span>
-                </a>
+                    </span> -->
+                </div>
             </li>
             <li class="cs-item">
-                <a href="" class="cs-link">
+                <div class="cs-link">
                     <picture class="cs-picture" id="pic-3">
                         <!--Mobile Image-->
                         <source media="(max-width: 600px)" srcset="/assets/images/seeds-of-love.jpg">
@@ -97,14 +97,14 @@ There are four mentoring groups:
                     <p class="cs-item-text">
                         Through outdoor activities such as planting, fishing, and hiking, children learn how to connect with nature in healthy ways. Engaging with nature can be another source of healing for youth coping with grief and trauma. Through nature, children find joy and embrace a positive coping resource that benefits them far beyond childhood.
                     </p>
-                    <span class="cs-fake-link">
+                    <!-- <span class="cs-fake-link">
                         Get Started
                         <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-                    </span>
-                </a>
+                    </span> -->
+                </div>
             </li>
             <li class="cs-item">
-                <a href="" class="cs-link">
+                <div class="cs-link">
                     <picture class="cs-picture" id="pic-4">
                         <!--Mobile Image-->
                         <source media="(max-width: 600px)" srcset="/assets/images/community-and-culture.jpg">
@@ -116,13 +116,14 @@ There are four mentoring groups:
                     <p class="cs-item-text">
                         Children learn the importance of community and culture by recognizing and respecting differences in others who they may rely on for support and guidance. Through cultural activities, children learn diversity and inclusion. Through community-based mentoring, they connect with local resources growing their support network.
                     </p>
-                    <span class="cs-fake-link">
+                    <!-- <span class="cs-fake-link">
                         Get Started
                         <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-                    </span>
-                </a>
+                    </span> -->
+                </div>
             </li>
         </ul>
+        <p class="cs-enroll">To learn more or enroll in services, send an email to <a href="mailto:hiro@kidshurttoo.org" style="font-size: inherit; color: inherit;">hiro@kidshurttoo.org</a> or call our office at <a href="tel:808-545-5683" style="font-size: inherit; color: inherit;">808-545-5683</a>.</p>
     </div>
 </section>
 
@@ -208,6 +209,11 @@ There are four mentoring groups:
                 display: block;
                 position: relative;
             }
+        }
+
+         .cs-enroll {
+            font-size: 1.5rem;
+            margin-top: 3rem;
         }
 
         .cs-chevron {
@@ -306,11 +312,11 @@ There are four mentoring groups:
             font-weight: 700;
             text-align: left;
             margin: 0 0 (12/16rem) 0;
-            color: var(--headerColor);
+            color: var(--primary);
         }
 
         .cs-item-text {
-            font-size: (16/16rem);
+            font-size: (18/16rem);
             line-height: 1.5em;
             text-align: left;
             margin: 0 0 (24/16rem) 0;
@@ -323,7 +329,7 @@ There are four mentoring groups:
             font-weight: 700;
             margin: 0;
             margin-top: auto;
-            color: var(--primary);
+            color: var(--secondaryLight);
             display: inline-flex;
             justify-content: flex-start;
             align-items: center;
