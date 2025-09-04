@@ -10,7 +10,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
 <BaseLayout
   title="Volunteer"
-  description="Meta description for the page"
+  description="Join us in creating a healing environment for grieving and traumatized children and youth."
   preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
@@ -19,12 +19,40 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
   <Landing title="Volunteer" image={optimizedImage} />
 
+   <section id="page-description">
+    <div class="container">
+      <h2 class="page-description">Join us in creating a healing environment for grieving and traumatized children and youth.</h2>
+    </div>
+  </section>
   
   <CTA />
 </BaseLayout>
 
 <style lang="less">
-  /* PAGE-SPECIFIC STYLES FOR THE REVIEWS PAGE */
+  /* PAGE-SPECIFIC STYLES FOR THE VOLUNTEER PAGE */
+
+  #page-description {
+    .page-description {
+      font-style: italic;
+      text-align: center;
+    }
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+  }
 
   
 </style>

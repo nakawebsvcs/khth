@@ -26,7 +26,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
   <section id="page-description">
     <div class="container">
-      <h2 class="page-description">Help us restore hope to Hawai'i's grieving keiki.</h2>
+      <h2 class="page-description">Help us restore hope to Hawaiʻi's grieving keiki.</h2>
     </div>
   </section>
 
@@ -238,6 +238,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
 <!--           Other Ways to Support              -->
 <!-- ============================================ -->
 
+<!-- ============================================ -->
+<!--           Other Ways to Support              -->
+<!-- ============================================ -->
+
 <section id="other-support">
     <div class="cs-container">
         <h2 class="cs-title">OTHER WAYS TO SUPPORT CHILDREN</h2>
@@ -247,7 +251,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 <p class="cs-row-text">Donate new stuffed animals, toys, or craft supplies. Call for pick up or drop off locations.</p>
             </div>
             <div class="cs-row">
-                <h3 class="cs-row-title">Give a Meal (postponed due to COVID)</h3>
+                <h3 class="cs-row-title">Give a Meal</h3>
                 <p class="cs-row-text">Families eat dinner together before the support group. Food is always appreciated in our groups and mentoring activities. We need help with planning, preparing, and serving meals at each group.</p>
             </div>
             <div class="cs-row">
@@ -256,7 +260,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             </div>
             <div class="cs-row">
                 <h3 class="cs-row-title">Memorial Gifts</h3>
-                <p class="cs-row-text">Make a donation in memory of someone. Fill out the donation form or mail your contribution.</p>
+                <p class="cs-row-text">Make a donation in memory of someone. Fill out the <a href="https://kidshurttoo.networkforgood.com/projects/183481-heart-of-gold" style="font-size: inherit; color: inherit;" target="_blank">donation form</a> or mail your contribution.</p>
             </div>
         </div>
     </div>
@@ -616,6 +620,47 @@ const optimizedImage = await getOptimizedImage(landingImage)
             display: block;
         }
 
+         .cs-button-solid {
+            font-size: (16/16rem);
+            font-weight: 700;
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-align: center;
+            text-decoration: none;
+            min-width: (150/16rem);
+            margin: 0;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+            padding: 0 (32/16rem);
+            background-color: var(--primary);
+            color: #fff;
+            border-radius: (8/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                content: "";
+                width: 0%;
+                height: 100%;
+                background: #000;
+                opacity: 1;
+                border-radius: (4/16rem);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+
         .cs-ul-icons {
             width: 100%;
             max-width: (630/16rem);
@@ -903,43 +948,40 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
         .cs-title {
             text-align: center;
-            max-width: 20ch;
+            max-width: 30ch;
         }
 
         .cs-support-table {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            border-collapse: collapse;
+            border: 1px solid #e0e0e0;
         }
 
         .cs-row {
-            padding: 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #e0e0e0;
 
             &:nth-child(odd) {
-                background-color: var(--secondaryLight);
+                background-color: #f9c37c7f;
             }
 
-            &:nth-child(even) {
-                background-color: #fff;
-            }
-
-            &:hover {
-                transform: translateY(-0.25rem);
-                box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+            &:last-child {
+                border-bottom: none;
             }
         }
 
         .cs-row-title {
-            font-size: clamp(1.25rem, 2vw, 1.5rem);
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding: 1rem;
+            color: var(--headerColor);
         }
 
         .cs-row-text {
-            font-size: 1rem;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            padding: 0 1rem 1rem;
             color: var(--bodyTextColor);
         }
     }
@@ -948,12 +990,20 @@ const optimizedImage = await getOptimizedImage(landingImage)
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #other-support {
-        .cs-support-table {
-            gap: 1.5rem;
+        .cs-row {
+            flex-direction: row;
+            align-items: center;
         }
 
-        .cs-row {
-            padding: 1.5rem;
+        .cs-row-title {
+            width: 30%;
+            padding: 1rem;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .cs-row-text {
+            width: 70%;
+            padding: 1rem;
         }
     }
 }
@@ -962,11 +1012,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 @media only screen and (min-width: 64rem) {
     #other-support {
         .cs-support-table {
-            gap: 2rem;
-        }
-
-        .cs-row {
-            padding: 2rem;
+            max-width: (1000/16rem);
         }
     }
 }
