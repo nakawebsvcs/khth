@@ -24,22 +24,55 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <h2 class="page-description">Join us in creating a healing environment for grieving and traumatized children and youth.</h2>
     </div>
   </section>
+                                
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
 
-    <!-- ============================================ -->
+<section id="sbs-1278">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/volunteers.png">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/volunteers.png">
+            <img loading="lazy" decoding="async" src="/assets/images/volunteers.png" alt="volunteers" width="738" height="598">
+        </picture>
+        <div class="cs-content">
+            <!-- <div class="cs-flex">
+                <span class="cs-topper">Our Company</span>
+                <h2 class="cs-title">Get to Know Stitch Building agency</h2>
+            </div> -->
+            <p class="cs-text">
+                Kids Hurt Too Hawai'i is training volunteers to help its efforts to bring solace to children. Volunteers play an essential role in supporting families on their healing journey from their grief and trauma. If you have any questions about volunteer opportunities, please call us or visit the sign-up form below.
+            </p>
+            <a href="https://kidshurttoo.dm.networkforgood.com/forms/volunteer-training" target="_blank" class="cs-button-solid">I Want to Help</a>
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves-m.svg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves.svg">
+        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves.svg" alt="waves" width="960" height="839">
+    </picture>
+</section>
+                                
+<!-- ============================================ -->
 <!--                  Content                     -->
 <!-- ============================================ -->
 
-<section id="content-1450">
+<!-- <section id="content-1450">
     <div class="cs-container">
-        <div class="cs-content">
+        <div class="cs-content"> -->
             <!-- <span class="cs-topper">ABOUT US</span>
             <h2 class="cs-title">Stitch Non-profit Charity is the largest global crowdfunding community in the world</h2> -->
-            <p class="cs-text">
+            <!-- <p class="cs-text">
                 Kids Hurt Too Hawai'i is training volunteers to help its efforts to bring solace to children. Volunteers play an essential role in supporting families on their healing journey from their grief and trauma. If you have any questions about volunteer opportunities, please call us or visit the sign-up form below.</p>
             <a href="https://kidshurttoo.dm.networkforgood.com/forms/volunteer-training" target="_blank" class="cs-button-solid">I Want to Help</a>
         </div>
     </div>
-</section>
+</section> -->
 
   <!-- ============================================ -->
 <!--                    Steps                     -->
@@ -150,7 +183,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 </section>
 
 <div class="container" id="fees">
-   <p class="cs-enroll">The fee for future facilitators may be waived but not for professional development only.</p>
+   <p class="cs-enroll">The fee for future facilitators may be waived, but not for professional development only.</p>
     <a href="https://kidshurttoo.dm.networkforgood.com/forms/volunteer-training" target="_blank" class="cs-button-solid" style="margin-top: 2rem;">I Want to Help</a>
 </div>
   
@@ -188,7 +221,191 @@ const optimizedImage = await getOptimizedImage(landingImage)
     margin-top: 3rem;
   }
 
-    /*-- -------------------------- -->
+/*-- -------------------------- -->
+<---        Side By Side        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-1278 {
+        padding: var(--sectionPadding);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (850/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: column;
+            /* 48px - 108px */
+            gap: clamp(3rem, 5vw, 6.75rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-title {
+            max-width: 20ch;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            /* 456px - 598px */
+            height: clamp(28.5rem, 46vw, 37.375rem);
+            border-radius: (20/16rem);
+            overflow: hidden;
+            display: block;
+            /* sends it to the bottom in the 2nd position */
+            order: 2;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                /* black overlay */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #1a1a1a;
+                opacity: 0.3;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 50%;
+            background-color: var(--primary);
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #sbs-1278 {
+        .cs-content {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: (32/16rem);
+        }
+
+        .cs-flex {
+            width: 45%;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-text {
+            width: 50%;
+        }
+
+        .cs-button-solid {
+            margin-right: auto;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbs-1278 {
+        /* moved padding back to the section container */
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cs-content {
+            width: 100%;
+            max-width: (433/16rem);
+            margin: 0;
+            flex-direction: column;
+            order: 2;
+            row-gap: 0;
+        }
+
+        .cs-flex {
+            width: 100%;
+        }
+
+        .cs-title {
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-text {
+            width: 100%;
+        }
+
+        .cs-picture {
+            max-width: (738/16rem);
+            order: 1;
+        }
+
+        .cs-background {
+            width: 60vw;
+            height: 100%;
+            /* 172px - 336px */
+            margin-right: clamp(11.125rem, 30vw, 21rem);
+            left: auto;
+            right: 50%;
+            top: 0;
+        }
+    }
+}
+
+  /*-- -------------------------- -->
 <---          Content           -->
 <--- -------------------------- -*/
 
@@ -417,7 +634,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         }
 
         .cs-item-text {
-            font-size: (15/16rem);
+            font-size: clamp(1.1rem, 2vw, 1.6rem);
             line-height: 1.5em;
             max-width: (450/16rem);
             margin: 0;
@@ -549,6 +766,59 @@ const optimizedImage = await getOptimizedImage(landingImage)
     }
   }
 }
+
+/* ====== Volunteer page: Tablet-only fix (768–1023px) ====== */
+@media only screen and (min-width: 48rem) and (max-width: 63.9375rem) {
+  /* scope this only to the volunteer variant so the original desktop section is untouched */
+  .volunteer-opportunities#steps-1376 {
+    .cs-card-group {
+      justify-content: center;
+      align-items: center;
+      gap: (40/16rem);
+      /* allow groups to stack/wrap if needed */
+      width: 100%;
+    }
+
+    /* make each group a horizontal row on tablet, full width */
+    .cs-group1,
+    .cs-group2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;    /* center the two items */
+      align-items: center;
+      gap: (24/16rem);
+      width: 100%;
+    }
+
+    /* force two items per row, identical sizing in both groups (prevents group2 shrinking) */
+    .cs-group1 .cs-item,
+    .cs-group2 .cs-item {
+      /* fixed 2-column behavior on tablet (subtract gap so items fit) */
+      flex: 0 0 calc(50% - (24/16rem));
+      max-width: (240/16rem);
+      box-sizing: border-box;
+    }
+
+    /* make waves visible on tablet for this page (desktop keeps its lines) */
+    .cs-waves {
+      display: block;
+      width: (71/16rem);
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
+
 
 /*-- -------------------------- -->
 <---    Training Content   -->
