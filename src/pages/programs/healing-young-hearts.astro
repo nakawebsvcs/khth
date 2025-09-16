@@ -49,7 +49,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <div class="support-types">
         <div class="support-type">
           <h3>School-based groups</h3>
-          <p>Follow a nine session curriculum and is offered twice a school year.</p>
+          <p>Follow a nine-session curriculum and are offered twice per school year.</p>
         </div>
         <div class="support-type">
           <h3>Community-based groups</h3>
@@ -107,7 +107,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <div class="structure-steps">
         <div class="step">
           <h3>Opening Circle</h3>
-          <p>Groups begin with a sharing circle. No one is forced to talk. There is an "I Pass" rule.</p>
+          <p>Groups begin with a sharing circle.<br><br> No one is forced to talk.<br><br> There is an "I Pass" rule.</p>
         </div>
         <div class="step">
           <h3>Play Time</h3>
@@ -197,12 +197,28 @@ const optimizedImage = await getOptimizedImage(landingImage)
     gap: 2rem;
   }
 
-  .support-type, .step {
-    background-color: var(--secondaryLight);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  .support-type, .cs-content {
+    font-size: 1.5rem;
   }
+    
+    
+    .support-type, .step {
+  background-color: #fad015b8;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  h3 {
+    color: var(--primary);
+    font-size: 1.5rem; // Adjust this value as needed
+    margin-bottom: 1rem; // Add some space between the heading and paragraph
+  }
+
+  p {
+    font-size: 1.3rem; // Adjust this value as needed
+    line-height: 1.5; // Improve readability with line height
+  }
+}
 
   ul {
     list-style-type: none;
