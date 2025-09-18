@@ -106,12 +106,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <picture class="cs-bg-picture">
           <source
             media="(min-width: 601px)"
-            srcset="/assets/images/img-placeholder.png"
+            srcset="/assets/images/contact-us.png"
           />
           <img
             aria-hidden="true"
             decoding="async"
-            src="/assets/images/img-placeholder.png"
+            src="/assets/images/contact-us.png"
             alt="building"
             loading="lazy"
             width="2500"
@@ -144,7 +144,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
     }
 
     #cs-contact {
-      font-family: "Roboto", "Arial", sans-serif;
       padding: var(--sectionPadding);
 
       .cs-container {
@@ -165,6 +164,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       }
 
       .cs-title {
+        color: var(--primary);
         text-align: left;
         max-width: (800/16rem);
       }
@@ -411,45 +411,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
       .cs-right-section {
         height: (578/16rem);
-      }
-    }
-  }
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #cs-contact {
-        .cs-text,
-        .cs-title {
-          color: var(--bodyTextColorWhite);
-        }
-
-        .cs-topper {
-          color: var(--primaryLight);
-        }
-
-        #cs-form {
-          label,
-          input,
-          textarea {
-            color: var(--bodyTextColorWhite);
-            background-color: transparent;
-
-            &::placeholder {
-              /* lighten up the color of the text by 40%*/
-              filter: brightness(1.4);
-            }
-          }
-        }
-
-        .cs-bg-picture {
-          background-color: #000;
-
-          img {
-            /* lets parent background-color bleed through and darken it */
-            opacity: 0.5;
-          }
-        }
       }
     }
   }
