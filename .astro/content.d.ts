@@ -155,6 +155,30 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
+"job-openings": Record<string, {
+  id: string;
+  body?: string;
+  collection: "job-openings";
+  data: InferEntrySchema<"job-openings">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"training-events": Record<string, {
+  id: string;
+  body?: string;
+  collection: "training-events";
+  data: InferEntrySchema<"training-events">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"volunteer-opportunities": Record<string, {
+  id: string;
+  body?: string;
+  collection: "volunteer-opportunities";
+  data: InferEntrySchema<"volunteer-opportunities">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
 
 	};
 

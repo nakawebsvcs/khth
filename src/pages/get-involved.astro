@@ -2,7 +2,9 @@
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
-import FAQ from "@components/FAQ.astro";
+import { getCollection } from 'astro:content';
+
+const jobOpenings = await getCollection('job-openings');
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "@js/utils"
@@ -37,94 +39,33 @@ const optimizedImage = await getOptimizedImage(landingImage)
 <section id="blog-2390">
     <div class="cs-container">
         <div class="cs-content">
-            <!-- <span class="cs-topper"></span> -->
             <h2 class="cs-title">Join Our Team</h2>
             <p class="cs-text">
                 Current job openings are posted below. Email your resume to <a href="mailto:executivedirector@kidshurttoo.org" style="font-size: inherit; color: inherit;">executivedirector@kidshurttoo.org</a> or call (808) 545-5683.
             </p>
         </div>
         <ul class="cs-card-group">
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                        <h3 class="cs-h3">Job Title</h3>
-                        <p class="cs-item-text">
-                            Job description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                        <h3 class="cs-h3">Job Title</h3>
-                        <p class="cs-item-text">
-                            Job description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                        <h3 class="cs-h3">Job Title</h3>
-                        <p class="cs-item-text">
-                            Job description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
+            {jobOpenings.map((job) => (
+                <li class="cs-item">
+                    <a href={`/job-openings/${job.slug}`} class="cs-link">
+                        <div class="cs-flex">
+                            <span class="cs-date">
+                                {job.data.date.toLocaleDateString()}
+                            </span>
+                        </div>
+                        <div class="cs-info">
+                            <h3 class="cs-h3">{job.data.title}</h3>
+                            <p class="cs-item-text">
+                                {job.data.description}
+                            </p>
+                        </div>
+                        <picture class="cs-picture">
+                            <img loading="lazy" decoding="async"
+                                src={job.data.image} width="330" height="242" alt={job.data.title}>
+                        </picture>
+                    </a>
+                </li>
+            ))}
         </ul>
     </div>
 </section>
