@@ -6,8 +6,8 @@ backend:
   identity_url: https://auth.decapbridge.com/sites/7a82a069-ad75-4f8e-b05b-2dfbacffaacc
   gateway_url: https://gateway.decapbridge.com
 local_backend: true
-media_folder: src/assets/images/blog # Location where files will be stored in the repo - we store them in src so that Astro can optimize them.
-public_folder: src/assets/images/blog  # Ensure that this path is the same as the media_folder path above.
+media_folder: public/assets/images/blog
+public_folder: /assets/images/blog  # Ensure that this path is the same as the media_folder path above.
 site_url: https://kidshurttoo.netlify.app/ # Displays a link to home page in the top-right corner of the CMS dashboard
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg # change url to a link to the image you want to use, no file paths, must be a URL
 collections:
@@ -20,11 +20,11 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Featured Image", name: "image", widget: "image", media_folder: "/src/assets/images/blog" }
       - { label: "Image Caption", name: "imageAlt", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "job_openings"
+  - name: "job-openings"
     label: "Job Openings"
     folder: "src/content/job-openings"
     create: true
@@ -33,9 +33,9 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image", name: "image", widget: "image", media_folder: "/src/assets/images/blog"}
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "volunteer_opportunities"
+  - name: "volunteer-opportunities"
     label: "Volunteer Opportunities"
     folder: "src/content/volunteer-opportunities"
     create: true
@@ -44,9 +44,9 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image", name: "image", widget: "image", media_folder: "/src/assets/images/blog"}
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "training_events"
+  - name: "training-events"
     label: "Training Events"
     folder: "src/content/training-events"
     create: true
@@ -55,5 +55,5 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image", name: "image", widget: "image", media_folder: "/src/assets/images/blog"}
       - { label: "Body", name: "body", widget: "markdown" }

@@ -21,43 +21,52 @@ const blogsCollection = defineCollection({
 
 // Job Openings collection
 const jobOpeningsCollection = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/job-openings" }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            date: z.date(),
-            description: z.string(),
-            image: image(),
-        }),
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/job-openings",
+  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      date: z.date(),
+      description: z.string(),
+      image: image(),
+    }),
 });
 
 // Volunteer Opportunities collection
 const volunteerOpportunitiesCollection = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/volunteer-opportunities" }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            date: z.date(),
-            description: z.string(),
-            image: image(),
-        }),
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/volunteer-opportunities",
+  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      date: z.date(),
+      description: z.string(),
+      image: image(),
+    }),
 });
 
 // Training Events collection
 const trainingEventsCollection = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/training-events" }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            date: z.date(),
-            description: z.string(),
-            image: image(),
-        }),
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/training-events",
+  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      date: z.date(),
+      description: z.string(),
+      image: image(),
+    }),
 });
 
 export const collections = {
     blog: blogsCollection,
-    'job-openings': jobOpeningsCollection,
-    'volunteer-opportunities': volunteerOpportunitiesCollection,
-    'training-events': trainingEventsCollection,
+    jobOpenings: jobOpeningsCollection,
+    volunteerOpportunities: volunteerOpportunitiesCollection,
+    trainingEvents: trainingEventsCollection,
 };

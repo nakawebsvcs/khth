@@ -155,27 +155,27 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"job-openings": Record<string, {
+"jobOpenings": Record<string, {
   id: string;
   body?: string;
-  collection: "job-openings";
-  data: InferEntrySchema<"job-openings">;
+  collection: "jobOpenings";
+  data: InferEntrySchema<"jobOpenings">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"training-events": Record<string, {
+"trainingEvents": Record<string, {
   id: string;
   body?: string;
-  collection: "training-events";
-  data: InferEntrySchema<"training-events">;
+  collection: "trainingEvents";
+  data: InferEntrySchema<"trainingEvents">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"volunteer-opportunities": Record<string, {
+"volunteerOpportunities": Record<string, {
   id: string;
   body?: string;
-  collection: "volunteer-opportunities";
-  data: InferEntrySchema<"volunteer-opportunities">;
+  collection: "volunteerOpportunities";
+  data: InferEntrySchema<"volunteerOpportunities">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;

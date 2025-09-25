@@ -4,7 +4,8 @@ import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
 import { getCollection } from 'astro:content';
 
-const jobOpenings = await getCollection('job-openings');
+const jobOpenings = await getCollection('jobOpenings');
+console.log("Job Openings:", jobOpenings);
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "@js/utils"
@@ -45,12 +46,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
             </p>
         </div>
         <ul class="cs-card-group">
-            {jobOpenings.map((job) => (
+            {jobOpenings.map((job) => {
+            console.log("Job data:", job);
+            return (
                 <li class="cs-item">
                     <a href={`/job-openings/${job.slug}`} class="cs-link">
                         <div class="cs-flex">
                             <span class="cs-date">
-                                {job.data.date.toLocaleDateString()}
+                                {new Date(job.data.date).toLocaleDateString()}
                             </span>
                         </div>
                         <div class="cs-info">
@@ -59,13 +62,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
                                 {job.data.description}
                             </p>
                         </div>
-                        <picture class="cs-picture">
-                            <img loading="lazy" decoding="async"
-                                src={job.data.image} width="330" height="242" alt={job.data.title}>
-                        </picture>
+                        <div class="cs-picture">
+                            <img src={job.data.image.src} alt={job.data.title} width="330" height="242" />
+                        </div>
                     </a>
                 </li>
-            ))}
+            );
+            })}
         </ul>
     </div>
 </section>
