@@ -28,7 +28,7 @@ collections:
     label: "Job Openings"
     folder: "src/content/job-openings"
     create: true
-    slug: "{{slug}}"
+    slug: "{{title}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
@@ -39,7 +39,7 @@ collections:
     label: "Volunteer Opportunities"
     folder: "src/content/volunteer-opportunities"
     create: true
-    slug: "{{slug}}"
+    slug: "{{title}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
@@ -50,7 +50,7 @@ collections:
     label: "Training Events"
     folder: "src/content/training-events"
     create: true
-    slug: "{{slug}}"
+    slug: "{{title}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}

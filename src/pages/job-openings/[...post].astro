@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const jobOpenings = await getCollection("jobOpenings");
   return jobOpenings.map((entry) => ({
     params: { post: entry.slug },
-    props: { post: entry },
+    props: { entry },
   }));
 }
 
