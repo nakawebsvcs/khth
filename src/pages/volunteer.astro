@@ -8,6 +8,8 @@ import {getOptimizedImage} from "@js/utils"
 import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
 
+import { Image } from "astro:assets";
+
 // Fetch data from collections
 const volunteerOpportunities = await getCollection('volunteerOpportunities');
 const trainingEvents = await getCollection('trainingEvents');
@@ -95,7 +97,12 @@ console.log("Training Events:", trainingEvents);
                             </p>
                         </div>
                         <div class="cs-picture">
-                            <img src={opportunity.data.image.src} alt={opportunity.data.title} width="330" height="242" />
+                              <Image 
+                        src={opportunity.data.image} 
+                        alt={opportunity.data.title} 
+                        width={330} 
+                        height={242} 
+                    />
                         </div>
                     </a>
                 </li>
@@ -244,7 +251,12 @@ console.log("Training Events:", trainingEvents);
                             </p>
                         </div>
                         <div class="cs-picture">
-                            <img src={event.data.image.src} alt={event.data.title} width="330" height="242" />
+                               <Image 
+                        src={event.data.image} 
+                        alt={event.data.title} 
+                        width={330} 
+                        height={242} 
+                    />
                         </div>
                     </a>
                 </li>
