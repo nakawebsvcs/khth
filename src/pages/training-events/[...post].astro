@@ -13,13 +13,13 @@ export async function getStaticPaths() {
   const trainingEvents = await getCollection("trainingEvents");
   return trainingEvents.map((entry) => ({
     params: { post: entry.id },
-    props: { post: entry },
+    props: { entry },
   }));
 }
 
-const { post } = Astro.props;
-const { title, date, description, image } = post.data;
-const { Content } = await render(post);
+const { entry } = Astro.props;
+const { title, date, description, image } = entry.data;
+const { Content } = await render(entry);
 ---
 
 <BaseLayout

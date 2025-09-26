@@ -3,9 +3,18 @@ import BaseLayout from "src/layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import { getCollection } from 'astro:content';
 import {getOptimizedImage} from "@js/utils"
 import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
+
+// Fetch data from collections
+const volunteerOpportunities = await getCollection('volunteerOpportunities');
+const trainingEvents = await getCollection('trainingEvents');
+
+console.log("Volunteer Opportunities:", volunteerOpportunities);
+console.log("Training Events:", trainingEvents);
+
 ---
 
 <BaseLayout
@@ -65,97 +74,35 @@ const optimizedImage = await getOptimizedImage(landingImage)
 <section id="blog-2390">
     <div class="cs-container">
         <div class="cs-content">
-            <!-- <span class="cs-topper"></span> -->
             <h2 class="cs-title">Volunteer Opportunities</h2>
             <p class="cs-text">
                 Interested in helping at an upcoming event? Click to read more and register.
             </p>
         </div>
         <ul class="cs-card-group">
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                        <h3 class="cs-h3">Event Title</h3>
-                        <p class="cs-item-text">
-                            Event description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                        <h3 class="cs-h3">Event Title</h3>
-                        <p class="cs-item-text">
-                            Event description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                       <h3 class="cs-h3">Event Title</h3>
-                        <p class="cs-item-text">
-                            Event description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
+            {volunteerOpportunities.map((opportunity) => (
+                <li class="cs-item">
+                    <a href={`/volunteer-opportunities/${opportunity.id}`} class="cs-link">
+                        <div class="cs-flex">
+                            <span class="cs-date">
+                                {new Date(opportunity.data.date).toLocaleDateString()}
+                            </span>
+                        </div>
+                        <div class="cs-info">
+                            <h3 class="cs-h3">{opportunity.data.title}</h3>
+                            <p class="cs-item-text">
+                                {opportunity.data.description}
+                            </p>
+                        </div>
+                        <div class="cs-picture">
+                            <img src={opportunity.data.image.src} alt={opportunity.data.title} width="330" height="242" />
+                        </div>
+                    </a>
+                </li>
+            ))}
         </ul>
     </div>
-</section>
+  </section>
 
   <!-- ============================================ -->
 <!--                    Steps                     -->
@@ -276,97 +223,35 @@ const optimizedImage = await getOptimizedImage(landingImage)
 <section id="blog-2391">
     <div class="cs-container">
         <div class="cs-content">
-            <!-- <span class="cs-topper"></span> -->
             <h2 class="cs-title">Training Events</h2>
             <p class="cs-text">
                 Upcoming training events by Kids Hurt Too Hawai'i. Click to read more and register.
             </p>
         </div>
         <ul class="cs-card-group">
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                        <h3 class="cs-h3">Event Title</h3>
-                        <p class="cs-item-text">
-                            Event description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                        <h3 class="cs-h3">Event Title</h3>
-                        <p class="cs-item-text">
-                            Event description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <div class="cs-flex">
-                        <span class="cs-date">
-                            <!-- <img class="cs-icon" loading="lazy" decoding="async"
-                                    src="/assets/images/KHTH-landing-img.png"
-                                    alt="icon" width="24" height="24" aria-hidden="true"> -->
-                            3 Sep, 2025
-                        </span>
-                        <!-- <span class="cs-tag">Individual</span> -->
-                    </div>
-                    <div class="cs-info">
-                       <h3 class="cs-h3">Event Title</h3>
-                        <p class="cs-item-text">
-                            Event description
-                        </p>
-                    </div>
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <source media="(min-width: 601px)"
-                                srcset="/assets/images/KHTH-landing-img.png">
-                        <img loading="lazy" decoding="async"
-                                src="/assets/images/KHTH-landing-img.png" width="330" height="242">
-                    </picture>
-                </a>
-            </li>
+            {trainingEvents.map((event) => (
+                <li class="cs-item">
+                    <a href={`/training-events/${event.id}`} class="cs-link">
+                        <div class="cs-flex">
+                            <span class="cs-date">
+                                {new Date(event.data.date).toLocaleDateString()}
+                            </span>
+                        </div>
+                        <div class="cs-info">
+                            <h3 class="cs-h3">{event.data.title}</h3>
+                            <p class="cs-item-text">
+                                {event.data.description}
+                            </p>
+                        </div>
+                        <div class="cs-picture">
+                            <img src={event.data.image.src} alt={event.data.title} width="330" height="242" />
+                        </div>
+                    </a>
+                </li>
+            ))}
         </ul>
     </div>
-</section>
+  </section>
   
   <CTA />
 </BaseLayout>
