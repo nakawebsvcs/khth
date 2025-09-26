@@ -5,6 +5,8 @@ import FAQ from "@components/FAQ.astro";
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
+import homePhoto from "../assets/images/home-photo.png";
+
 // Get all blog posts and sort by date
 const allPosts = await getCollection('blog');
 const featuredPosts = allPosts
@@ -50,24 +52,17 @@ const optimizedImage = await getOptimizedImage(landingImage)
       </div>
     </div>
     <!-- Background Image, background image added in the css at 1600px for parallax effect -->
-    <picture class="cs-background">
-      <source
-        media="(max-width: 600px)"
-        srcset="/assets/images/home-photo.png"
-      />
-      <source
-        media="(min-width: 601px)"
-        srcset="/assets/images/home-photo.png"
-      />
-      <img
-        decoding="async"
-        src="/assets/images/home-photo.png"
-        alt="kids hurt too hawaiʻi"
-        width="2250"
-        height="1500"
-        aria-hidden="true"
-      />
-    </picture>
+    
+<div class="cs-background">
+  <Image
+    src={homePhoto}
+    alt="kids hurt too hawaiʻi"
+    width={2250}
+    height={1500}
+    loading="eager"
+    aria-hidden="true"
+  />
+</div>
     <!--SVG Curve-->
     <svg
       class="cs-curve"
@@ -259,15 +254,20 @@ const optimizedImage = await getOptimizedImage(landingImage)
 </section>
   
 
-  <!-- ============================================ -->
-  <!--                   Gallery                    -->
-  <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                   Instagram Feed             -->
+<!-- ============================================ -->
+<div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
 
-  <section id="gallery">
-    <div class="cs-container">
-      <span class="cs-topper">[-- Instagram Feeds Here --]</span>
-    </div>
-  </section>
+<!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+<script type="text/javascript">
+/* curator-feed-default-feed-layout */
+(function(){
+var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+i.src="https://cdn.curator.io/published/d2328d69-a833-4d59-b3c2-54946dcc0082.js";
+e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+})();
+</script>
 
   <CTA />
 </BaseLayout>
@@ -369,13 +369,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
       }
 
       .cs-background {
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    
 
         img {
           position: absolute;
@@ -1368,120 +1369,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
     }
   }
 
-  /*-- -------------------------- -->
-    <---          Gallery           -->
-    <--- -------------------------- -*/
-
-  /* Mobile - 360px - Contains hover animation */
-  @media only screen and (min-width: 0em) {
-    #gallery {
-      /* Centers button */
-      text-align: center;
-      padding: var(--sectionPadding);
-      position: relative;
-      /* Prevents overflow from the image going off screen */
-      overflow: hidden;
-      .cs-container {
-        width: 100%;
-        max-width: (1322/16em);
-        margin: auto;
-      }
-
-      .cs-topper {
-        text-align: center;
-        margin-bottom: (16/16rem);
-      }
-
-      .cs-title {
-        text-align: center;
-        max-width: (621/16rem);
-        margin-bottom: (40/16rem);
-      }
-
-      .cs-image-group {
-        /* used rem so it doesn't scale with the font size of on parent */
-        font-size: ~"min(1.1vw, 1em)";
-        width: 100%;
-        max-width: (1322/16em);
-        margin: 0 auto (60/16rem);
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: (30/16em);
-      }
-
-      .cs-row {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: (30/16em);
-      }
-
-      .cs-picture {
-        display: block;
-        position: relative;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-
-      .cs-row-1 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (567/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (512/16em);
-        }
-      }
-
-      .cs-row-2 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (492/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (517/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-      }
-
-      .cs-row-3 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (625/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (452/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-      }
-    }
+  #curator-feed-default-feed-layout {
+    padding: var(--sectionPadding);
+    padding-right: 4rem;
+    padding-left: 4rem;
   }
+
 </style>
