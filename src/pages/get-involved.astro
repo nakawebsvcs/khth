@@ -50,7 +50,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             console.log("Job data:", job);
             return (
                 <li class="cs-item">
-                    <a href={`/job-openings/${job.slug}`} class="cs-link">
+                    <a href={`/job-openings/${job.id}`} class="cs-link">
                         <div class="cs-flex">
                             <span class="cs-date">
                                 {new Date(job.data.date).toLocaleDateString()}

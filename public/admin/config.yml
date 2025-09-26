@@ -1,6 +1,6 @@
 # See full Decap documentation for further configuration: https://decapcms.org/docs/intro/
 backend:
-  name: git-gateway
+  name: local
   repo: nakawebsvcs/khth
   branch: main
   identity_url: https://auth.decapbridge.com/sites/7a82a069-ad75-4f8e-b05b-2dfbacffaacc

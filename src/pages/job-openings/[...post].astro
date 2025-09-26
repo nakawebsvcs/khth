@@ -12,14 +12,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
 export async function getStaticPaths() {
   const jobOpenings = await getCollection("jobOpenings");
   return jobOpenings.map((entry) => ({
-    params: { post: entry.slug },
+    params: { post: entry.id },
     props: { entry },
   }));
 }
 
-const { post } = Astro.props;
-const { title, date, description, image } = post.data;
-const { Content } = await render(post);
+const { entry } = Astro.props;
+const { title, date, description, image } = entry.data;
+const { Content } = await render(entry);
 ---
 
 <BaseLayout
