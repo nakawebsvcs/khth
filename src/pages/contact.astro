@@ -29,16 +29,31 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
   <section id="cs-contact">
     <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post">
+      <form name="contact"
+      id="cs-form"
+      method="post"
+      netlify="true"
+      netlify-honeypot="web-url"
+      action="/success"
+      >
         <div class="cs-content">
           <span class="cs-topper">Contact</span>
           <h2 class="cs-title">Get in Touch</h2>
-          <p class="cs-text">
+          <!-- <p class="cs-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
             elementum ullamcorper ipsum porttitor aliquam. Id magna urna
             ultrices odio pulvinar. Sed ut.
-          </p>
+          </p> -->
         </div>
+        <!-- Hidden field for Netlify -->
+        <input type="hidden" name="form-name" value="contact" />
+        
+        <!-- Honeypot field to prevent spam -->
+        <p class="hidden">
+          <label>
+            Don't fill this out if you're human: <input name="web-url" />
+          </label>
+        </p>
         <label>
           Name
           <input
@@ -77,7 +92,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
             id="message"
             placeholder="Write message..."></textarea>
         </label>
-        <button class="cs-button-solid" type="submit">Submit Message</button>
+        <div data-netlify-recaptcha="true"></div>
+<button class="cs-button-solid" type="submit">Submit Message</button>
       </form>
       <div class="cs-right-section">
         <!--Email-->
@@ -221,6 +237,11 @@ const optimizedImage = await getOptimizedImage(landingImage)
           min-height: (120/16rem);
           padding-top: (20/16rem);
         }
+
+         .hidden {
+    display: none;
+  }
+  
 
         .cs-button-solid {
           width: 100%;

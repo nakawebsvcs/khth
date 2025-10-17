@@ -4,10 +4,6 @@
     "url": "/about/",
     "children": [
       {
-        "key": "Our Team",
-        "url": "/about/our-team/"
-      },
-      {
         "key": "Our Approach",
         "url": "/about/our-approach"
       },
