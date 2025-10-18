@@ -5,8 +5,18 @@ import Landing from "@components/Landing.astro";
 import { getCollection } from 'astro:content';
 import { Image } from "astro:assets";
 
-const jobOpenings = await getCollection('jobOpenings');
-console.log("Job Openings:", jobOpenings);
+let jobOpenings = [];
+let error = null;
+
+try {
+  jobOpenings = await getCollection('jobOpenings');
+  console.log("Job Openings:", jobOpenings);
+
+
+} catch (e) {
+  console.error("Error fetching job openings:", e);
+  error = "Unable to fetch job openings at this time.";
+}
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "@js/utils"
@@ -46,36 +56,39 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 Current job openings are posted below. Email your resume to <a href="mailto:executivedirector@kidshurttoo.org" style="font-size: inherit; color: inherit;">executivedirector@kidshurttoo.org</a> or call (808) 545-5683.
             </p>
         </div>
-        <ul class="cs-card-group">
-            {jobOpenings.map((job) => {
-            console.log("Job data:", job);
-            return (
-                <li class="cs-item">
-                    <a href={`/job-openings/${job.id}`} class="cs-link">
-                        <div class="cs-flex">
-                            <span class="cs-date">
-                                {new Date(job.data.date).toLocaleDateString()}
-                            </span>
-                        </div>
-                        <div class="cs-info">
-                            <h3 class="cs-h3">{job.data.title}</h3>
-                            <p class="cs-item-text">
-                                {job.data.description}
-                            </p>
-                        </div>
-                        <div class="cs-picture">
-                           <Image 
-                        src={job.data.image} 
-                        alt={job.data.title} 
-                        width={330} 
-                        height={242} 
-                    />
-                        </div>
-                    </a>
-                </li>
-            );
-            })}
-        </ul>
+        {error ? (
+            <p class="cs-error">{error}</p>
+        ) : jobOpenings.length === 0 ? (
+            <p class="cs-no-jobs">There are currently no open positions. Please check back later.</p>
+        ) : (
+            <ul class="cs-card-group">
+                {jobOpenings.map((job) => (
+                    <li class="cs-item" key={job.id}>
+                        <a href={`/job-openings/${job.id}`} class="cs-link">
+                            <div class="cs-flex">
+                                <span class="cs-date">
+                                    {new Date(job.data.date).toLocaleDateString()}
+                                </span>
+                            </div>
+                            <div class="cs-info">
+                                <h3 class="cs-h3">{job.data.title}</h3>
+                                <p class="cs-item-text">
+                                    {job.data.description}
+                                </p>
+                            </div>
+                            <div class="cs-picture">
+                                <Image 
+                                    src={job.data.image} 
+                                    alt={job.data.title} 
+                                    width={330} 
+                                    height={242} 
+                                />
+                            </div>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        )}
     </div>
 </section>
                                 

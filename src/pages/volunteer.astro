@@ -10,12 +10,25 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
 import { Image } from "astro:assets";
 
-// Fetch data from collections
-const volunteerOpportunities = await getCollection('volunteerOpportunities');
-const trainingEvents = await getCollection('trainingEvents');
+let volunteerOpportunities = [];
+let trainingEvents = [];
+let errorVolunteerOpportunities = null;
+let errorTrainingEvents = null;
 
-console.log("Volunteer Opportunities:", volunteerOpportunities);
-console.log("Training Events:", trainingEvents);
+
+try {
+  volunteerOpportunities = await getCollection('volunteerOpportunities');
+} catch (e) {
+  console.error("Error fetching volunteer opportunities:", e);
+  errorVolunteerOpportunities = "Unable to fetch volunteer opportunities at this time.";
+}
+
+try {
+  trainingEvents = await getCollection('trainingEvents');
+} catch (e) {
+  console.error("Error fetching training events:", e);
+  errorTrainingEvents = "Unable to fetch training events at this time.";
+}
 
 ---
 
@@ -81,33 +94,39 @@ console.log("Training Events:", trainingEvents);
                 Interested in helping at an upcoming event? Click to read more and register.
             </p>
         </div>
+        {errorVolunteerOpportunities ? (
+        <p class="cs-error">{errorVolunteerOpportunities}</p>
+      ) : volunteerOpportunities.length === 0 ? (
+        <p class="cs-no-data">No volunteer opportunities available at this time.</p>
+      ) : (
         <ul class="cs-card-group">
-            {volunteerOpportunities.map((opportunity) => (
-                <li class="cs-item">
-                    <a href={`/volunteer-opportunities/${opportunity.id}`} class="cs-link">
-                        <div class="cs-flex">
-                            <span class="cs-date">
-                                {new Date(opportunity.data.date).toLocaleDateString()}
-                            </span>
-                        </div>
-                        <div class="cs-info">
-                            <h3 class="cs-h3">{opportunity.data.title}</h3>
-                            <p class="cs-item-text">
-                                {opportunity.data.description}
-                            </p>
-                        </div>
-                        <div class="cs-picture">
-                              <Image 
-                        src={opportunity.data.image} 
-                        alt={opportunity.data.title} 
-                        width={330} 
-                        height={242} 
-                    />
-                        </div>
-                    </a>
-                </li>
-            ))}
+          {volunteerOpportunities.map((opportunity) => (
+            <li class="cs-item">
+              <a href={`/volunteer-opportunities/${opportunity.id}`} class="cs-link">
+                <div class="cs-flex">
+                  <span class="cs-date">
+                    {new Date(opportunity.data.date).toLocaleDateString()}
+                  </span>
+                </div>
+                <div class="cs-info">
+                  <h3 class="cs-h3">{opportunity.data.title}</h3>
+                  <p class="cs-item-text">
+                    {opportunity.data.description}
+                  </p>
+                </div>
+                <div class="cs-picture">
+                  <Image 
+                    src={opportunity.data.image} 
+                    alt={opportunity.data.title} 
+                    width={330} 
+                    height={242} 
+                  />
+                </div>
+              </a>
+            </li>
+          ))}
         </ul>
+      )}
     </div>
   </section>
 
@@ -235,33 +254,39 @@ console.log("Training Events:", trainingEvents);
                 Upcoming training events by Kids Hurt Too Hawai'i. Click to read more and register.
             </p>
         </div>
+        {errorTrainingEvents ? (
+        <p class="cs-error">{errorTrainingEvents}</p>
+      ) : trainingEvents.length === 0 ? (
+        <p class="cs-no-data">No training events available at this time.</p>
+      ) : (
         <ul class="cs-card-group">
-            {trainingEvents.map((event) => (
-                <li class="cs-item">
-                    <a href={`/training-events/${event.id}`} class="cs-link">
-                        <div class="cs-flex">
-                            <span class="cs-date">
-                                {new Date(event.data.date).toLocaleDateString()}
-                            </span>
-                        </div>
-                        <div class="cs-info">
-                            <h3 class="cs-h3">{event.data.title}</h3>
-                            <p class="cs-item-text">
-                                {event.data.description}
-                            </p>
-                        </div>
-                        <div class="cs-picture">
-                               <Image 
-                        src={event.data.image} 
-                        alt={event.data.title} 
-                        width={330} 
-                        height={242} 
-                    />
-                        </div>
-                    </a>
-                </li>
-            ))}
+          {trainingEvents.map((event) => (
+            <li class="cs-item">
+              <a href={`/training-events/${event.id}`} class="cs-link">
+                <div class="cs-flex">
+                  <span class="cs-date">
+                    {new Date(event.data.date).toLocaleDateString()}
+                  </span>
+                </div>
+                <div class="cs-info">
+                  <h3 class="cs-h3">{event.data.title}</h3>
+                  <p class="cs-item-text">
+                    {event.data.description}
+                  </p>
+                </div>
+                <div class="cs-picture">
+                  <Image 
+                    src={event.data.image} 
+                    alt={event.data.title} 
+                    width={330} 
+                    height={242} 
+                  />
+                </div>
+              </a>
+            </li>
+          ))}
         </ul>
+      )}
     </div>
   </section>
   
