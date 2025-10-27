@@ -17,7 +17,7 @@ const featuredPosts = posts.filter((post) =>
     <span class="blog-header">Featured Updates</span>
     {
       featuredPosts.map((post) => (
-        <a class="blog-feature" href={`/blog/${post.id}`}>
+        <a class="blog-feature" href={`/updates/${post.id}`}>
           <picture class="blog-featureImage">
             <Image
               src={post.data.image}
