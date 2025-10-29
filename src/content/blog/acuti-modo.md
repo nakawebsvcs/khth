@@ -5,7 +5,7 @@ description: rief is not selfish. Focusing on loss and remembering loved ones is
   inward during grief is an expression of care, connection, and selfless
   love—drawing inspiration from Kierkegaard’s timeless reflections on love and
   loss.
-author: Kids Hurt Too Hawai'i
+author: ELEANOR HALEY
 date: 2025-10-07T05:26:00.000-10:00
 image: /src/assets/images/blog/untitled-design-18-2048x1286.jpg
 imageAlt: Grief and Trauma Support
