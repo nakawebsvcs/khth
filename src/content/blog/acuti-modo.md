@@ -1,54 +1,16 @@
 ---
-title: Acuti modo
-description: Lorem Acuti modo tardantis unam mitissima dissimulator
-  inposuit   corpus sintque tura tremenda, nec coetum.
+title: Grief is Not Selfish
+description: rief is not selfish. Focusing on loss and remembering loved ones is
+  a natural, human, and deeply loving act. This piece explores why turning
+  inward during grief is an expression of care, connection, and selfless
+  love—drawing inspiration from Kierkegaard’s timeless reflections on love and
+  loss.
 author: Kids Hurt Too Hawai'i
-date: 2023-06-08T15:26:46.705Z
-image: /src/assets/images/blog/img-placeholder.png
+date: 2025-10-07T05:26:00.000-10:00
+image: /src/assets/images/blog/untitled-design-18-2048x1286.jpg
 imageAlt: Grief and Trauma Support
 tags:
   - post
   - featured
 ---
-
-## Lacerans aliter tetigit praeterea rite
-
-Lorem markdownum tardantis unam mitissima dissimulator inposuit corpus sintque tura tremenda, nec coetum. Est limen Isthmo sagittas patres emerguntque anxia
-[defenderet](http://www.morte.com/parvo.html) illi, est.
-
-- Sua ille submittere viribus verba visa Myconon
-- Qvem nec
-- Frena prior rauco iaculum enim
-- Modo referat
-- Tibi mihi sumit bibit censuque licentia consistite
-- Sumptis Iunonis muneris quiete haec tori
-
-## Aut pedum tendit ut raptae
-
-Est vicinia, est herba ut et [duro](http://pars.net/iamcum), agnosse dicitur spectator gracili aquarum. **Amore adfer metam** queri quartus cunctas ego.
-
-Tectis Iovemque moriens fraternaeque Gorgonei equosque Oceanumque, huius corporis, contigerant metu vecta patietur versasse. Et undis superbus? Cura cortice
-saepe admisitque tamen iuvenum, vivere Lemnicolae est vidi dilapsa ianua gelidum, Ismenus. Est dic lacertos regnum quippe certo, ut vultus tollere.
-
-## Iacentes temptabat
-
-Novissima adfixa declinat Labros et librat herbida se sacro amplectitur moenia: parcite nam quoque pugnat non quam tot. Sole et enim inundet? Ecce urbesque
-_obliquis_, non patietur fuga fixa feros horruit [ferox tui](http://www.postquam.org/gravatumiphis.html), de.
-
-1. Argentea ait exstabant trames
-2. Nocti liquidum Minervae Cerberus quas
-3. Neque removente
-
-## Respondere prior si ingemit bellare
-
-Cadme tetigit in luctus minor mulcebunt tempora, utque sua semper essem cultrosque **enses** praecipitem hunc **vestris**. Restantem iussit poena; quod vendit
-electarumque mendacem nec sedens quidem Iovi torta cruribus, et? Venit alvum _anima_! Manibusque idem _Aconteus ducat_ multamque et tibi Siphnon; mitissima
-devenit aut poscitur flumina nymphas revocare obstitit Lyciaeque Meleagros fors.
-
-Orbem dolendi corpore hic [flamma vertere recurvas](http://paruit.com/sineloqui.html), da pedes calido unus armis relinquunt,
-[flores Minervae formam](http://alumnaesibi.com/unda). Caelo [inposuit](http://invirginibus.org/trahuntur) viribus semper, vesci excipit facta putes. Patitur
-attonitos acutior dum liquefacta nostra habebat. Duabus victus me suae viscera natorum ferox contulerat, de tuus Pasiphaeia ruunt protinus?
-
-_Multis soror_, mundi paruerit quietem in, temeraria velantque guttura temerarius candens prostravit vera operatus, ut fecimus. Gyaros quaesiti in, a frustra,
-iacentia hosti. Suae iamque. Sustinet crimen toris, oves hanc est causa tum paravi phocen in natas, crudelis infra erat minimo? Inquit et **loqui studiisque
-Alpheos** venti spectata velocior [fida](http://www.animiquetantaque.net/atulterius.aspx) Iove habet Cometen rediit; tulisset!
+Grief is not selfish. This should go without saying, but it doesn't always. Grief may make us more self-focused for a time. And, of course, selfish people grieve. But the act itself is human, normal, and necessary. In a society that values stoicism and, on average, offers less than a week of bereavement leave—where prevailing yet inaccurate grief theories seem to prescribe "completion" after five stages—and where, for much of the 20th century, remaining connected to the deceased was seen as pathological, it's not surprising some might feel selfish for focusing on their grief. This is why we often hear people say things like: I'm wallowing in self-pity. I've been talking about or focusing too much on myself. I've been grieving too long. I should put my needs aside for now. I'm taking too much from others. Other people have it worse. Our needs are different when we're grieving. When we’re not grieving or facing another crisis, we often strive to balance our own needs with those of others, or even to put others first. So, for many people, feeling consumed by their grief—and allowing it to spread its tentacles and occupy space—can tip the scales in a way that feels self-absorbed or selfish. But it's beyond logical that grief would cause us to turn inward for a while. We turn inward to tend to the hurricane of thoughts and emotions thrashing within us. We turn inward because that is where we find the people we love who have died—when we close our eyes, when we dream, when we remember. And none of this is selfish. In fact, some might even say it teaches us something about how to love. Grief is not selfish "the most unselfish, the freest, the most faithful love" Death, loss, and grief are an innate part of the human experience. They have been with us since the very beginning, so it’s no surprise that countless artists, poets, and philosophers have reflected on them throughout history. Sometimes I find past understandings of grief at odds with how I think about it today. But other times, someone from 200 years ago says something that resonates so deeply that I’m reminded how universal experiences like love and grief can connect us, even across centuries. To that point, for anyone struggling with the feeling that their grief is selfish, I recommend the words of Søren Kierkegaard from "Works of Love," written in 1847 in Denmark. Kierkegaard on Grief Kierkegaard, often regarded today as the "father of existentialism," wrote that loving the dead is one of the most unselfish, free, and faithful acts of love possible, because we give this love despite knowing that the deceased can offer us nothing in return. They cannot repay us with affection or words of love; they are gone. We are met only with painful silence, and yet we still persist in loving. Because Kierkegaard was heavily influenced by his faith, he was concerned not only with how we show love to our family and friends, but also to our neighbors—to our fellow human beings. He believed that the love we show in loss should inspire us to love others in a similarly selfless way. Even though our neighbors may not be willing or able to reciprocate our love and kindness, we should still offer it. He writes: “The work of love in recollecting one who is dead is thus a work of the most unselfish, the freest, the most faithful love. Therefore go out and practice it; recollect the one who is dead and just in this way learn to love the living unselfishly, freely, faithfully.” Does grief sometimes lead to selfish actions or behaviors? Sure, and we'd all do well to stay mindful of that. But simply holding on to someone, taking the time to connect through love and pain, acknowledging the anguish of their absence, and reflecting on how they live on in this world—that is not selfish. And doing all this in a world that is not always supportive of ongoing grief? Well, I think I agree with Kierkegaard on this one.
