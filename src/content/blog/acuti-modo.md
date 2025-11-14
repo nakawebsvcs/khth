@@ -1,7 +1,7 @@
 ---
 title: Grief is Not Selfish
-description: rief is not selfish. Focusing on loss and remembering loved ones is
-  a natural, human, and deeply loving act. This piece explores why turning
+description: Grief is not selfish. Focusing on loss and remembering loved ones
+  is a natural, human, and deeply loving act. This piece explores why turning
   inward during grief is an expression of care, connection, and selfless
   love—drawing inspiration from Kierkegaard’s timeless reflections on love and
   loss.
