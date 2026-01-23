@@ -1,0 +1,355 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import client from "@data/client.json";
+import Landing from "@components/Landing.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Privacy Policy for Kids Hurt Too Hawai'i"
+  preloadedImage = {optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <Landing 
+    title="Privacy Policy"
+    image={optimizedImage}
+  />
+
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Privacy Policy</span>
+        <!--    <h2 class="cs-title">Stitch Non-profit Charity is the largest global crowdfunding community in the world</h2> -->
+             <p style="font-size: 1rem; text-align: center; margin: -1.5rem 0 1.5rem 0;">Effective Date: January 13, 2026</p>
+            <p style="font-size: 1.2rem; text-align: left;">
+              Kids Hurt Too Hawai'i respects your privacy. This Privacy Policy explains how we handle information on our website (kidshurttoo.org).
+            </p>
+            <div class="cs-text">
+          <h2 class="cs-text cs-title" style="text-align: left; margin-top: 1.5rem;">
+            Information We Collect
+          </h2>
+          <div class="cs-text">
+          <p class="cs-text">
+            We collect information you choose to provide:</p>
+            <ul class="cs-ul">
+              <li>Contact information when you reach out via our contact form (name, phone, email)</li>
+              <li>Information submitted to us when contacted directly via email</li>
+              <li>Email address if you sign up for our newsletter</li>
+              <li>We display our social media content using Curator.io, a third-party service. Curator.io may collect certain technical data (such as IP addresses and browser information) to provide and improve their service. We do not have access to this data and it is governed by their own Privacy Policy; please review for more information.</li>
+            </ul>
+        </div>
+        <h2 class="cs-title" style="text-align: left;">
+            How We Use Your Information
+          </h2>
+          <div class="cs-text">
+          <p class="cs-text">
+            We use your information only to:</p>
+            <ul class="cs-ul">
+              <li>Respond to your inquiries</li>
+              <li>Send occasional updates (with opt-out option)</li>
+              <li>Improve your website experience</li>
+            </ul>
+            <p class="cs-text">We do not sell, trade, or rent your personal information.</p>
+        </div>
+        <h2 class="cs-title" style="text-align: left;">
+  Donations
+</h2>
+<div class="cs-text">
+  <p class="cs-text">
+    When you make a donation through links on our site, you'll be directed to a secure third-party payment processor. We do not receive or store your payment information.
+  </p>
+</div>
+
+<h2 class="cs-title" style="text-align: left;">
+  Cookies
+</h2>
+<div class="cs-text">
+  <p class="cs-text">
+    Our website uses essential cookies for site functionality, such as session cookies.<br>
+    You can disable cookies in your browser settings, but this may affect some site features.
+  </p>
+</div>
+
+<h2 class="cs-title" style="text-align: left;">
+  Your Rights
+</h2>
+<div class="cs-text">
+  <p class="cs-text">
+    You can:
+  </p>
+  <ul class="cs-ul">
+    <li>Ask what information we have about you</li>
+    <li>Request we delete your information (contact form submissions, etc.)</li>
+    <li>Opt-out of communications at any time</li>
+  </ul>
+  <p class="cs-text">
+    To exercise these rights, contact us at info@kidshurttoo.org.
+  </p>
+</div>
+
+<h2 class="cs-title" style="text-align: left;">
+  Children's Privacy
+</h2>
+<div class="cs-text">
+  <p class="cs-text">
+    Our website is intended for adults. We do not knowingly collect information from children under 13.
+  </p>
+</div>
+
+<h2 class="cs-title" style="text-align: left;">
+  Changes to This Policy
+</h2>
+<div class="cs-text">
+  <p class="cs-text">
+    We may update this policy occasionally. The current version will always be posted here with the effective date.
+  </p>
+</div>
+
+<h2 class="cs-title" style="text-align: left;">
+  Contact Us
+</h2>
+<div class="cs-text">
+  <p class="cs-text">
+    Questions about this Privacy Policy? Contact us:<br><br>
+    Email: info@kidshurttoo.org<br>
+    Phone: 808-545-5683<br>
+    Mail: 245 N. Kukui St. #102, Honolulu, HI 96817
+  </p>
+</div>
+<p style="text-align: left; font-size: 0.9rem; width: 65%"><em><br>This Privacy Policy is provided as a general template. Organizations should review all policies with their own legal counsel to ensure compliance with local, state, and federal laws.</em></p>
+        
+        </div>
+
+        </div>
+    </div>
+</section>
+                                
+                              
+</BaseLayout>
+
+<style is:global lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+
+/*-- -------------------------- -->
+<---       Custom Landing      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  .page-header {
+    padding: 0; /* Remove padding as we want full-width */
+    margin-top: 60px; /* Add margin to push content below navbar */
+    
+    .full-width-image-container {
+      position: relative;
+      width: 100vw;
+      height: 50vh; /* Significantly increased height */
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center; /* Keep focus on top */
+        display: block;
+      }
+      
+      .header-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      
+      .header-title {
+        color: var(--primary);
+        text-align: center;
+        margin: 0;
+        padding: 0 1rem;
+        font-size: var(--headerFontSize, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}
+
+/* Large screens (desktops and tablets) */
+@media only screen and (min-width: 768px) {
+  .page-header {
+    .full-width-image-container {
+      height: 80vh; /* Significantly increased height */
+      
+      .header-title {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+/* Extra Large screens (wide desktops) */
+@media only screen and (min-width: 1200px) {
+  .page-header {
+    .full-width-image-container {
+      height: 70vh; /* Significantly increased height */
+    }
+
+    .header-title {
+      font-size: 5rem;
+    }
+  }
+}
+
+
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #content-1450 {
+    padding: var(--sectionPadding);
+    
+    .cs-container {
+      width: 70%;
+      max-width: (1280/16rem);
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+
+    .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+
+    .cs-title, .cs-text {
+      max-width: 100%;
+    }
+
+    .cs-text {
+      /* Increased font size */
+      color: black;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      margin: 0 0 (32/16rem) 0;
+      font-size: 1.2rem !important;
+      text-align: left;
+      
+      /* Ensure all child elements inherit the font size */
+      & > * {
+        font-size: inherit;
+      }
+
+      
+      /* Ensure paragraphs have proper spacing */
+      p {
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        font-size: inherit;
+      }
+      
+      /* Style for strong/bold text */
+      strong, b {
+        font-weight: 700;
+        color: var(--bodyTextColor);
+        font-size: inherit;
+      }
+      
+      /* Style for lists */
+      .cs-ul, ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem !important;
+  
+        
+        li {
+          margin-bottom: 0.5rem;
+          font-size: inherit;
+        }
+      }
+    }
+
+    .cs-topper {
+      text-align: center;
+      width: 80%; /* Ensures the element takes full width */
+      display: block; /* Makes it a block element for proper centering */
+      margin: 0 auto 3rem auto;
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .cs-button-solid {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+/* Mobile - 360px */
+#list-826 {
+    width: 100%;
+    max-width: (630/16rem);
+    padding: 0;
+    margin: 0 0 (32/16rem) 0;
+    padding-top: (12/16rem);
+    padding-bottom:(32/16rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: (36/16rem);
+
+    .cs-item {
+        list-style: none;
+        width: 100%;
+        max-width: (264/16rem);
+        margin: 0;
+    }
+
+    .cs-h3 {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 2.3vw, 1.25rem);
+        line-height: 1.5em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0 0 (8/16rem) 0;
+        color: var(--secondary);
+    }
+
+    .cs-item-text {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+}
+
+                                
+                                
+</style>
