@@ -1,5 +1,5 @@
 ---
-title: KHTHFacilitator Training Day 2
+title: KHTH Facilitator Training Day 2
 date: 2026-02-10T11:04:00.000-10:00
 description: Day 2 of KHTH Volunteer Facilitator Training
 image: /src/assets/images/blog/khth-landing-img.png
