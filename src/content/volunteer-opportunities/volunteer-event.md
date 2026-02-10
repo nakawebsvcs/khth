@@ -2,7 +2,7 @@
 title: Aloha 'Ia 'O Wai'anae  March 10th
 date: 2026-02-10T11:10:00.000-10:00
 description: "Aloha 'Ia 'O Wai'anae March 10th "
-image: /src/assets/images/blog/khth-landing-img.png
+image: /src/assets/images/blog/personalize-.jpg
 ---
 Aloha ʻIa ʻo Waiʻanae
 
