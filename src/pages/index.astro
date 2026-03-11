@@ -7,12 +7,15 @@ import { getCollection } from 'astro:content';
 
 import homePhoto from "../assets/images/home-photo.png";
 
-// Get all blog posts and sort by date
-const allPosts = await getCollection('blog');
-const featuredPosts = allPosts
-  .filter(post => post.data.tags?.includes('featured'))
-  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
-  .slice(0, 4); // Get top 4 featured posts
+// Fetch all blog posts
+const allBlogPosts = await getCollection("blog");
+
+// Sort by date (most recent first) and get the latest 3
+const recentBlogPosts = allBlogPosts
+  .sort((a, b) => {
+    return new Date(b.data.date) - new Date(a.data.date);
+  })
+  .slice(0, 4);
 
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
@@ -228,7 +231,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             <h2 class="cs-title">Recent News & Updates</h2>
         </div>
       <ul class="cs-card-group">
-    {featuredPosts.map((post) => (
+    {recentBlogPosts.map((post) => (
         <li class="cs-item">
             <div class="cs-picture">
                 <Image 
@@ -269,7 +272,6 @@ e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
 })();
 </script>
 
-  <CTA />
 </BaseLayout>
 
 <style lang="less">
