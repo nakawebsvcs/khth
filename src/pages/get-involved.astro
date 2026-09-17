@@ -10,9 +10,6 @@ let error = null;
 
 try {
   jobOpenings = await getCollection('jobOpenings');
-  console.log("Job Openings:", jobOpenings);
-
-
 } catch (e) {
   console.error("Error fetching job openings:", e);
   error = "Unable to fetch job openings at this time.";
