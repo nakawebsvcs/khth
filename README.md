@@ -1,15 +1,35 @@
-  <h3 align="center">Intermediate Astro v4 - Decap CMS</h3>
+  <h1 align="center">Nonprofit Website - Astro v5 + Decap CMS</h1>
 
   <p align="center">
-    This intermediate kit includes a pre-configured Astro setup, along with five pages filled with CodeStitch components. Everything is ready to go right from the start, offering a fantastic introduction to the advantages of a Static Site Generator, complete with LESS preprocessing and a blog powered by Decap CMS. This kit also leverages the power of a few Astro tools such as, but not limited to, Content Collections, View Transitions, Astro components, scoped styling and scripting etc.
+    A production-ready nonprofit website built with Astro v5, featuring a headless CMS for content management, multiple dynamic content collections, and optimized performance. Deployed and actively serving a Hawai'i-based nonprofit organization.
     <br/>
     <br/>
-    <a href="https://intermediate-astro-kit-decap-cms.netlify.app" target="_blank">View Live Result</a>
+    <a href="https://kidshurttoo.org/" target="_blank">View Live Site</a>
   </p>
 
-  <p align="center">
-    Created and maintained by <a href="https://github.com/BuckyBuck135" target="_blank">BuckyBuck135</a>
-  </p>
+## Key Features & Customizations
+
+- **Multi-Collection CMS**: Extended Decap CMS beyond basic blog functionality to manage Job Openings, Volunteer Opportunities, and Training Events
+- **Custom Content Architecture**: Implemented Astro Content Collections with TypeScript validation for multiple content types
+- **Performance Optimized**: Perfect Lighthouse scores with image optimization, lazy loading, and modern web standards
+- **Nonprofit-Focused Pages**: Custom pages including Programs, Get Involved, Volunteer, Privacy Policy, and Contact
+- **Static Site Generation**: Leverages Astro v5 for fast builds and optimal SEO
+- **Production Deployment**: Live site with DecapBridge integration for secure CMS access
+
+## Tech Stack
+
+- **Framework**: Astro v5 with View Transitions
+- **CMS**: Decap CMS (formerly Netlify CMS) with Git-based workflow
+- **Styling**: LESS preprocessing with scoped component styles
+- **Content**: TypeScript-validated Content Collections
+- **Icons**: Astro Icon integration
+- **Deployment**: Netlify with automated builds
+
+---
+
+### Original Template
+
+Built from the [Intermediate Astro Kit](https://github.com/BuckyBuck135/Intermediate-Astro-Kit-LESS) by BuckyBuck135
 
 ## Table of Contents
 
